@@ -2,6 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
+
+export interface Application{
+  "id": number,
+  "userId": number,
+  "offerId": number,
+  "apiSource": string,
+  "title": string,
+  "company": string,
+  "location": string,
+  "url": string,
+  "status": string,
+  "notes": string,
+  "dateAdded": string
+}
 export interface User {
   "id": number,
   "firstName": string,
@@ -34,6 +48,20 @@ export interface Favorite{
 export class DataStoreService {
 
   constructor(private http: HttpClient) {
+  }
+
+  //Applications
+
+  getMyApplications():Observable<Application[]>{
+    return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`)
+  }
+  
+  updateApplication(applicationId:number):Observable<Application>{
+    return this.http.get<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
+  }
+
+  deleteApplication(applicationId:number):Observable<Application>{
+    return this.http.delete<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
   }
 
 
