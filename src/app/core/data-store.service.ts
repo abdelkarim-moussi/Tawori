@@ -18,6 +18,15 @@ export interface UserDTO{
 
 }
 
+export interface Favorite{
+    "id": number,
+    "userId": number,
+    "offerId": number,
+    "title": string,
+    "company": string,
+    "location": string
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -28,13 +37,15 @@ export class DataStoreService {
   }
 
 
-
+  //Users
   getUsers(): Observable<UserDTO[]> {
     return this.http.get<UserDTO[]>(`${environment.jsonServerUrl}/users`);
   }
+
   getUserById(userId:number): Observable<UserDTO[]> {
     return this.http.get<UserDTO[]>(`${environment.jsonServerUrl}/users/${userId}`);
   }
+
   addUser(user: User): Observable<UserDTO> {
     return this.http.post<UserDTO>(`${environment.jsonServerUrl}/users`, user);
   }
@@ -45,6 +56,24 @@ export class DataStoreService {
 
   deleteUser(userId: number): Observable<any> {
     return this.http.delete<any>(`${environment.jsonServerUrl}/users/${userId}`);
+  }
+
+
+  //Favorites
+  getFavorites():Observable<Favorite[]>{
+    return this.http.get<Favorite[]>(`${environment.jsonServerUrl}/favorites`);
+  }
+
+  getFavoriteById(favoriteId:number):Observable<Favorite>{
+    return this.http.get<Favorite>(`${environment.jsonServerUrl}/favorites/${favoriteId}`);
+  }
+
+  addTofavorite(newFavorite:Favorite):Observable<Favorite>{
+    return this.http.post<Favorite>(`${environment.jsonServerUrl}/favorites`,newFavorite);
+  }
+
+  removeFromFavorite(favoriteId: number):Observable<any>{
+    return this.http.delete<any>(`${environment.jsonServerUrl}/favorites/${favoriteId}`);
   }
 
 }
