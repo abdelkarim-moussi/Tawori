@@ -55,7 +55,7 @@ export class DataStoreService {
   getMyApplications():Observable<Application[]>{
     return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`)
   }
-  
+
   updateApplication(applicationId:number):Observable<Application>{
     return this.http.get<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
   }
