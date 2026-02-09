@@ -1,5 +1,23 @@
 {
-    "users":[],
-    "favorites":[],
-    "applications":[]
+  "users": [
+    {
+      "id": 1,
+      "firstName": "abdelkarim",
+      "lastName": "moussi",
+      "email": "moussi@gmail.com",
+      "password": "12345678"
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    }
+  ],
+  "applications": []
 }
