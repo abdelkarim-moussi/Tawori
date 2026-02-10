@@ -5,4 +5,5 @@ export interface Offer {
     "company": string,
     "location": string,
     "url": string,
+    "createdAt": string
 }

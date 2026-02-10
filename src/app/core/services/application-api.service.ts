@@ -11,7 +11,9 @@ export class ApplicationApiService {
 
   constructor(private http : HttpClient) { }
 
-    
+    getApplications(){
+      
+    }
 
    getMyApplications():Observable<Application[]>{
       return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`)
