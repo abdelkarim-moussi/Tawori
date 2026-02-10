@@ -1,11 +1,22 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Offer } from '../../core/types/offer';
 import { OfferService } from '../../core/services/offer.service';
-import { NgIf, NgFor } from '@angular/common';
+import { NgIf, NgFor, CommonModule } from '@angular/common';
+import { TableComponent } from '../../shared/components/table/table/table.component';
+import { ColumnDef } from '../../core/types/column-def';
+import { OfferCardComponent } from '../../shared/components/offer-card/offer-card.component';
 
+export const COLUMN_DEFINITIONS: ColumnDef<Offer>[] = [
+    { headerText: 'Source', field: 'apiSource' },
+    { headerText: 'Title', field: 'title' },
+    { headerText: 'Company', field: 'company' },
+    { headerText: 'Location', field: 'location'},
+    { headerText: 'Url', field: 'url'},
+    { headerText: 'Publication Date', field: 'createdAt'}
+];
 @Component({
   selector: 'app-offers',
-  imports: [NgIf,NgFor],
+  imports: [NgIf,NgFor, TableComponent, OfferCardComponent,CommonModule],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
@@ -22,6 +33,7 @@ export class OffersComponent implements OnInit, OnDestroy {
   searchKey: string = "";
   country: string = "us";
   location: string = "";
+  columns = COLUMN_DEFINITIONS;
 
   fetchOffers(){
     this.isLoading = true;

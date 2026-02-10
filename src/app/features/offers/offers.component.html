@@ -1,21 +1,52 @@
-<div *ngIf="isLoading" class="spinner">Loading Offers..</div>
-
-<div *ngIf="errorMessage" class="error-alert">{{ errorMessage }}</div>
-
-<div *ngIf="!isLoading && offers.length > 0">
-  <div *ngFor="let offer of offers" class="card">
-    <h4>{{ offer.title }}</h4>
-    <span>Source: {{ offer.apiSource }}</span>
+<div class="container mx-auto p-6 bg-gray-50 min-h-screen">
+  <div
+    *ngIf="isLoading"
+    class="flex flex-col items-center justify-center py-20"
+  >
+    <div
+      class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"
+    ></div>
+    <p class="mt-4 text-gray-600 font-medium">Loading Job Offers...</p>
   </div>
-</div>
 
-<div>
-  <button (click)="goToPreviousPage()" [disabled]="currentPage == 1">
-    previous
-  </button>
-  <button (click)="goToNextPage()">next</button>
-</div>
+  <div
+    *ngIf="errorMessage"
+    class="bg-red-50 border-l-4 border-red-500 p-4 mb-6"
+  >
+    <p class="text-red-700">{{ errorMessage }}</p>
+  </div>
 
-<div *ngIf="!isLoading && offers.length === 0 && !errorMessage">
-  There is no offers
+  <div *ngIf="!isLoading && offers.length > 0">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <app-offer-card *ngFor="let offer of offers" [offer]="offer">
+      </app-offer-card>
+    </div>
+
+    <div class="flex justify-center items-center space-x-4 mt-12 pb-10">
+      <button
+        (click)="goToPreviousPage()"
+        [disabled]="currentPage === 1"
+        class="px-6 py-2 bg-white border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+      >
+        previous
+      </button>
+
+      <span class="text-gray-600 font-semibold">page {{ currentPage }}</span>
+
+      <button
+        (click)="goToNextPage()"
+        class="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-sm text-sm font-medium hover:bg-blue-700 transition-all active:scale-95"
+      >
+        next
+      </button>
+    </div>
+  </div>
+
+  <div
+    *ngIf="!isLoading && offers.length === 0 && !errorMessage"
+    class="text-center py-20"
+  >
+    <div class="text-gray-400 text-6xl mb-4 text-center">📭</div>
+    <p class="text-gray-500 text-xl">There Is No Job Offers.</p>
+  </div>
 </div>

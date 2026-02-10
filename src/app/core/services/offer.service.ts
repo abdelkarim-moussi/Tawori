@@ -16,9 +16,9 @@ export class OfferService {
         "id": data.id || data.MatchedObjectId,
         "apiSource": apiSource,
         "title": data.name || data.title || data.PositionTitle,
-        "company": data.company.display_name || data.company.name || data.OrganizationName,
-        "location": data.location.display_name || data.locations[0].name || data.PositionLocationDisplay,
-        "url": data.redirect_url || data.refs.landing_page || data.PositionURI,
+        "company": data.company?.display_name || data.company?.name || data.OrganizationName,
+        "location": data.location?.display_name || data?.locations?.[0].name || data.PositionLocationDisplay,
+        "url": data.redirect_url || data.refs?.landing_page || data.PositionURI,
         "createdAt": data.created || data.publication_date || data.PublicationStartDate,
     }
   }
@@ -28,12 +28,15 @@ export class OfferService {
     const halfLimit = Math.floor(resulsPerPage/2);
 
     const adzunaOffers = this.http.get<any>(`${environment.adzunaApiUrl}/${country}/search/${page}`,{
+      headers: {
+        accept: "application/json"
+      },
       params : {
-        search: searchKey,
         app_id: environment.adzunaAppId,
         app_key: environment.adzunaApiKey,
+        what: searchKey,
         results_per_page: halfLimit,
-        location0: location
+        where: location || ""
       }
     }).pipe(
       catchError(error => {
