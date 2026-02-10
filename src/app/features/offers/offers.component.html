@@ -1,1 +1,21 @@
-<p>offers works!</p>
+<div *ngIf="isLoading" class="spinner">Loading Offers..</div>
+
+<div *ngIf="errorMessage" class="error-alert">{{ errorMessage }}</div>
+
+<div *ngIf="!isLoading && offers.length > 0">
+  <div *ngFor="let offer of offers" class="card">
+    <h4>{{ offer.title }}</h4>
+    <span>Source: {{ offer.apiSource }}</span>
+  </div>
+</div>
+
+<div>
+  <button (click)="goToPreviousPage()" [disabled]="currentPage == 1">
+    previous
+  </button>
+  <button (click)="goToNextPage()">next</button>
+</div>
+
+<div *ngIf="!isLoading && offers.length === 0 && !errorMessage">
+  There is no offers
+</div>
