@@ -1,37 +1,5 @@
-/* ── Offer Card ── */
-
-.offer-card {
-  position: relative;
-  border-radius: 20px;
-  padding: 2px;
-  height: 100%;
-  cursor: default;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.offer-card:hover {
-  transform: translateY(-6px);
-}
-
-/* Animated gradient border / glow */
-.card-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #6366f1, #06b6d4, #8b5cf6, #ec4899);
-  background-size: 300% 300%;
-  animation: glow-shift 6s ease infinite;
-  opacity: 0.35;
-  transition: opacity 0.4s ease;
-  z-index: 0;
-}
-
-.offer-card:hover .card-glow {
-  opacity: 1;
-}
-
+/* Keyframes for glow animation */
 @keyframes glow-shift {
-
   0%,
   100% {
     background-position: 0% 50%;
@@ -42,64 +10,8 @@
   }
 }
 
-/* Inner card surface */
-.card-inner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.06),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  transition: box-shadow 0.35s ease;
-}
-
-.offer-card:hover .card-inner {
-  box-shadow:
-    0 12px 40px rgba(99, 102, 241, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-/* ── Header row ── */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 12px;
-}
-
-/* Source badge */
-.source-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: #6366f1;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-  border: 1px solid rgba(99, 102, 241, 0.15);
-}
-
-.badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #6366f1;
-  animation: pulse-dot 2s ease infinite;
-}
-
+/* Keyframes for badge dot pulse */
 @keyframes pulse-dot {
-
   0%,
   100% {
     opacity: 1;
@@ -112,127 +24,8 @@
   }
 }
 
-/* Card icon */
-.card-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.offer-card:hover .card-icon {
-  transform: rotate(-8deg) scale(1.08);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
-}
-
-.card-icon svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* ── Title ── */
-.card-title {
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #1e1b4b;
-  margin: 0 0 10px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  transition: color 0.3s ease;
-}
-
-.offer-card:hover .card-title {
-  color: #6366f1;
-}
-
-/* ── Detail rows ── */
-.card-detail {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 6px;
-  font-size: 0.8rem;
-  color: #475569;
-}
-
-.detail-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(99, 102, 241, 0.08);
-  color: #6366f1;
-  flex-shrink: 0;
-}
-
-.detail-icon svg {
-  width: 14px;
-  height: 14px;
-}
-
-.location-icon {
-  background: rgba(239, 68, 68, 0.08);
-  color: #ef4444;
-}
-
-.company-detail span {
-  font-weight: 600;
-  color: #334155;
-}
-
-/* ── Date ── */
-.card-date {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.7rem;
-  color: #94a3b8;
-  margin-top: 2px;
-  margin-bottom: 14px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(148, 163, 184, 0.15);
-}
-
-.card-date svg {
-  width: 13px;
-  height: 13px;
-  flex-shrink: 0;
-}
-
-/* ── CTA button ── */
-.card-cta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  margin-top: auto;
-  padding: 10px 16px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #fff;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.card-cta::before {
+/* CTA hover overlay — pseudo-element cannot be expressed in utility classes */
+/* .card-cta::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -240,33 +33,13 @@
   opacity: 0;
   transition: opacity 0.35s ease;
   border-radius: 14px;
-}
+} */
 
 .card-cta:hover::before {
   opacity: 1;
 }
 
-.card-cta:hover {
-  box-shadow: 0 8px 28px rgba(139, 92, 246, 0.45);
-  transform: translateY(-1px);
-}
-
-.card-cta:active {
-  transform: scale(0.97) translateY(0);
-}
-
-.card-cta span,
-.card-cta svg {
-  position: relative;
-  z-index: 1;
-}
-
-.card-cta svg {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s ease;
-}
-
+/* CTA arrow nudge on hover */
 .card-cta:hover svg {
   transform: translateX(4px);
 }

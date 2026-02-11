@@ -8,15 +8,6 @@
       "password": "12345678"
     }
   ],
-  "favorites": [
-    {
-      "id": 1,
-      "userId": "2",
-      "offerId": "101",
-      "title": "Développeur Angular",
-      "company": "Entreprise A",
-      "location": "Casablanca"
-    }
-  ],
+  "favorites": [],
   "applications": []
 }
