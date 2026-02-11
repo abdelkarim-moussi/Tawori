@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 import { Application } from '../types/application';
 
@@ -29,6 +29,17 @@ export class ApplicationApiService {
   
     deleteApplication(applicationId:number):Observable<Application>{
       return this.http.delete<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
+    }
+
+    checkIfAlreadyApplied(userId: number, offerId: number): Observable<boolean>{
+      return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`,{
+        params: {
+          usersId : userId,
+          offerId : offerId
+        }
+      }).pipe(
+        map(applications => applications.length > 0)
+      )
     }
   
 }
