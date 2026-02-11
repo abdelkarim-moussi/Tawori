@@ -17,7 +17,7 @@ export const COLUMN_DEFINITIONS: ColumnDef<Offer>[] = [
 ];
 @Component({
   selector: 'app-offers',
-  imports: [NgIf, NgFor, TableComponent, OfferCardComponent, CommonModule, FormsModule],
+  imports: [NgIf, NgFor, TableComponent, OfferCardComponent ,CommonModule, FormsModule],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })

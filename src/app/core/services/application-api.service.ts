@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Application } from 'express';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
+import { Application } from '../types/application';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,12 @@ export class ApplicationApiService {
       return this.http.post<Application>(`${environment.jsonServerUrl}/applications`,application);
     }
 
-   getMyApplications():Observable<Application[]>{
+    getMyApplications():Observable<Application[]>{
       return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`)
+    }
+
+    getApplicationById(applicationId:string | null):Observable<Application>{
+      return this.http.get<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
     }
   
     updateApplication(applicationId:number, status : string):Observable<Application>{

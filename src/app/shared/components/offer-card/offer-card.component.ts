@@ -1,25 +1,26 @@
 import { Component, Input } from '@angular/core';
 import { Offer } from '../../../core/types/offer';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ApplicationApiService } from '../../../core/services/application-api.service';
 import { Application } from '../../../core/types/application';
 
 @Component({
   selector: 'app-offer-card',
-  imports: [DatePipe],
+  imports: [DatePipe, CommonModule],
   templateUrl: './offer-card.component.html',
   styleUrl: './offer-card.component.css'
 })
 export class OfferCardComponent {
   @Input() offer!: Offer;
+  message: string | null = null;
+  messageType: 'success' | 'error' | null = null;
+  alreadyApplied: boolean = false;
 
   constructor(private applicationService: ApplicationApiService){}
-
 
   trackApplication(){
 
     let application: Application = {
-      id:1,
       userId: 1, 
       offerId: Number(this.offer.id),
       apiSource: this.offer.apiSource,
@@ -35,9 +36,13 @@ export class OfferCardComponent {
     this.applicationService.createApplication(application).subscribe({
       next:(data:Application)=>{
         application = data;
+        this.messageType = "success";
+        this.message = "Application Succefull"
       },
       error:(error)=>{
         console.error("There is an Error Will Trying To Save The Application : ",error);
+        this.messageType = "error";
+        this.message = "Application Failed"
       }
     }
     );
