@@ -21,19 +21,25 @@
       <div
         class="w-[34px] h-[34px] rounded-xl flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-300 text-white shadow-[0_4px_12px_rgba(99,102,241,0.3)] transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-[1.08] group-hover:shadow-[0_6px_20px_rgba(99,102,241,0.45)]"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-4 h-4"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-        </svg>
+        <a>
+          <svg
+            class="w-6 h-6"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+            />
+          </svg>
+        </a>
       </div>
     </div>
 
@@ -115,21 +121,19 @@
 
     <!-- CTA Buttons -->
 
-    <div class="flex gap-5 mt-auto">
-      <a
-        [href]="offer.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="card-cta flex items-center justify-center gap-2 w-full mt-auto py-2 px-3 rounded-md text-[0.8rem] font-bold tracking-wide text-white bg-indigo-500 hover:bg-indigo-600 shadow-gray-300 no-underline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] relative overflow-hidden hover:shadow-[0_8px_28px_rgba(139,92,246,0.45)] hover:-translate-y-px active:scale-[0.97] active:translate-y-0"
+    <div class="flex gap-5 mt-auto justify-between">
+      <button
+        (click)="trackApplication()"
+        class="flex items-center justify-center cursor-pointer gap-2 mt-auto py-2 px-3 rounded-md text-[0.8rem] font-bold tracking-wide text-white bg-indigo-500 hover:bg-indigo-600 shadow-gray-300 no-underline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] relative overflow-hidden hover:shadow-[0_8px_28px_rgba(139,92,246,0.45)] hover:-translate-y-px active:scale-[0.97] active:translate-y-0"
       >
         <span class="relative z-1">Track Application</span>
-      </a>
+      </button>
 
       <a
         [href]="offer.url"
         target="_blank"
         rel="noopener noreferrer"
-        class="card-cta flex items-center justify-center gap-2 w-full mt-auto py-2.5 px-4 text-[0.8rem] font-bold tracking-wide hover:text-indigo-600 no-underline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] relative overflow-hidden hover:-translate-y-px active:scale-[0.97] active:translate-y-0"
+        class="flex items-center justify-center gap-2 mt-auto py-2 px-3 text-[0.8rem] font-bold tracking-wide hover:text-indigo-600 no-underline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] relative overflow-hidden hover:-translate-y-px active:scale-[0.97] active:translate-y-0"
       >
         <span class="relative z-1">View Offer</span>
         <svg
