@@ -19,6 +19,15 @@ export class ApplicationApiService {
       return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`)
     }
 
+    searchForApplication(searchKey:string,searchLocation:string):Observable<Application[]>{
+      return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`,{
+        params:{
+          title: searchKey,
+          location: searchLocation
+        }
+      })
+    }
+
     getApplicationById(applicationId:string | null):Observable<Application>{
       return this.http.get<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
     }
