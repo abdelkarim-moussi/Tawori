@@ -1,15 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-search-filters-header',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './search-filters-header.component.html',
   styleUrl: './search-filters-header.component.css'
 })
 export class SearchFiltersHeaderComponent {
 
   @Input() isLoading = false;
+  @Input() showLocationFilter = true;
+  @Input() showCountryFilter = true;
 
   searchKey = '';
   location = '';
