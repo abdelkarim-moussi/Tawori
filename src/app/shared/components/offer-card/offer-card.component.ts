@@ -3,6 +3,7 @@ import { Offer } from '../../../core/types/offer';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ApplicationApiService } from '../../../core/services/application-api.service';
 import { Application } from '../../../core/types/application';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-offer-card',
@@ -13,10 +14,10 @@ import { Application } from '../../../core/types/application';
 export class OfferCardComponent {
   @Input() offer!: Offer;
   message: string | null = null;
-  messageType: 'success' | 'error' | null = null;
+  messageType: 'success' | 'error' | 'info' | null = null;
   alreadyApplied: boolean = false;
 
-  constructor(private applicationService: ApplicationApiService){}
+  constructor(private applicationService: ApplicationApiService, private router: Router){}
 
   trackApplication(){
 
@@ -33,11 +34,27 @@ export class OfferCardComponent {
       dateAdded: new Date().toISOString()
     };
 
+    this.applicationService.checkIfAlreadyApplied(application.userId,application.offerId).subscribe(
+      {
+        next:(applied)=>{
+          this.alreadyApplied = applied;
+        }
+      }
+    )
+
+    if(!this.alreadyApplied){
+      this.processApplication(application);
+    }
+    
+  }
+
+  processApplication(application: Application){
     this.applicationService.createApplication(application).subscribe({
       next:(data:Application)=>{
         application = data;
         this.messageType = "success";
-        this.message = "Application Succefull"
+        this.message = "Application Succefull";
+        this.router.navigate(["applicationDetails",application.id])
       },
       error:(error)=>{
         console.error("There is an Error Will Trying To Save The Application : ",error);
@@ -46,6 +63,5 @@ export class OfferCardComponent {
       }
     }
     );
-    
   }
 }
