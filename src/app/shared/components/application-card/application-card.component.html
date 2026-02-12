@@ -101,26 +101,24 @@
 
     <!-- CTA Buttons -->
 
-    <div class="flex gap-5 mt-auto justify-between">
-      <a
-        [routerLink]="['../applicationDetails', application.id]"
-        class="flex items-center justify-center gap-2 mt-auto py-2 px-3 text-[0.8rem] font-bold tracking-wide hover:text-indigo-600 no-underline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] relative overflow-hidden hover:-translate-y-px active:scale-[0.97] active:translate-y-0"
+    <a
+      [routerLink]="['../applicationDetails', application.id]"
+      class="flex items-center justify-start gap-2 mt-auto py-2 px-3 text-[0.8rem] font-bold tracking-wide hover:text-indigo-600 no-underline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] relative overflow-hidden hover:-translate-y-px active:scale-[0.97] active:translate-y-0"
+    >
+      <span class="relative z-1">View Details</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-4 h-4 relative z-1 transition-transform duration-300"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       >
-        <span class="relative z-1">View Details</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-4 h-4 relative z-1 transition-transform duration-300"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="5" y1="12" x2="19" y2="12" />
-          <polyline points="12 5 19 12 12 19" />
-        </svg>
-      </a>
-    </div>
+        <line x1="5" y1="12" x2="19" y2="12" />
+        <polyline points="12 5 19 12 12 19" />
+      </svg>
+    </a>
   </div>
 </div>

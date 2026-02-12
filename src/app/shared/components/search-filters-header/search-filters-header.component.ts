@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,4 +9,33 @@ import { FormsModule } from '@angular/forms';
 })
 export class SearchFiltersHeaderComponent {
 
+  @Input() isLoading = false;
+
+  searchKey = '';
+  location = '';
+  country = 'us';
+
+  @Output() search = new EventEmitter<{
+    searchKey: string,
+    location: string,
+    country: string
+  }>()
+
+  onSearch(){
+    this.search.emit({
+      searchKey: this.searchKey,
+      location: this.location,
+      country: this.country
+    })
+  }
+
+  onReset(){
+    if(this.searchKey != "" || this.location != "" || this.country != "us"){
+      this.searchKey = '';
+      this.location = '';
+      this.country = 'us';
+      
+      this.onSearch()
+    }
+  }
 }
