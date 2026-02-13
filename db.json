@@ -18,32 +18,6 @@
   "favorites": [],
   "applications": [
     {
-      "id": 1,
-      "userId": 1,
-      "offerId": 5608399160,
-      "apiSource": "Adzuna",
-      "title": "Driver Class A",
-      "company": "Clean Harbors",
-      "location": "Crugers, Westchester County",
-      "url": "https://www.adzuna.com/land/ad/5608399160?se=-Mi6pVIH8RG2uNwzHvjTUA&utm_medium=api&utm_source=8f6cdae2&v=B3C2D4E22FDA2F46353F741098899157D7BD0698",
-      "status": "Pending",
-      "notes": "",
-      "dateAdded": "2026-02-11T15:47:45.414Z"
-    },
-    {
-      "userId": 1,
-      "offerId": 5611723215,
-      "apiSource": "Adzuna",
-      "title": "Physician - Non-Invasive Cardiology Advanced Imaging (No MRI) - Fargo, ND",
-      "company": "Essentia Health",
-      "location": "Fargo, Cass County",
-      "url": "https://www.adzuna.com/land/ad/5611723215?se=NFXll1kH8RGW-b-EASq4rw&utm_medium=api&utm_source=8f6cdae2&v=5F37FCBB5FA04C6D33334E15B4FC3DA80344F01A",
-      "status": "Pending",
-      "notes": "",
-      "dateAdded": "2026-02-11T15:54:45.127Z",
-      "id": 2
-    },
-    {
       "userId": 1,
       "offerId": 5562484193,
       "apiSource": "Adzuna",
