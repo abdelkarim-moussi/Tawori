@@ -5,18 +5,19 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApplicationCardComponent } from '../../shared/components/application-card/application-card.component';
 import { SearchFiltersHeaderComponent } from '../../shared/components/search-filters-header/search-filters-header.component';
-import { filter } from 'rxjs';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @Component({
   selector: 'app-applications',
-  imports: [FormsModule,CommonModule,ApplicationCardComponent,SearchFiltersHeaderComponent],
+  imports: [FormsModule,CommonModule,ApplicationCardComponent,SearchFiltersHeaderComponent, NgxPaginationModule],
   templateUrl: './applications.component.html',
   styleUrl: './applications.component.css'
 })
 export class ApplicationsComponent implements OnInit {
   applications: Application[] = [];
   filtredApplications: Application[] = [];
-  currentPage: number = 1;
+  page: number = 1;
+  resultsPerPage: number = 10;
   isLoading: boolean = false;
   searchKey: string = "";
   location: string = "";
@@ -31,10 +32,11 @@ export class ApplicationsComponent implements OnInit {
   }
 
   fetchApplications(){
+
     this.applicationService.getMyApplications().subscribe(
             {
               next: (data)=>{
-                this.applications = data;
+                this.applications = data
                 this.filtredApplications = data;
                 this.isLoading = false;
               },
@@ -63,14 +65,22 @@ export class ApplicationsComponent implements OnInit {
       }
       
       this.isLoading = false
+
+  }
+
+  get totalPages(): number{
+    return Math.ceil(this.filtredApplications.length/this.resultsPerPage);
   }
 
   goToNextPage(){
-    
+    if(this.page < this.totalPages)
+    this.page ++;
   }
 
   goToPreviousPage(){
-
+    if(this.page > 1){
+      this.page --;
+    }
   }
 
 }
