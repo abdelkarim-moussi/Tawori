@@ -107,6 +107,58 @@
       "notes": "",
       "dateAdded": "2026-02-11T16:54:02.418Z",
       "id": 7
+    },
+    {
+      "userId": 1,
+      "offerId": 5428706100,
+      "apiSource": "Adzuna",
+      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
+      "company": "Milton Hershey School",
+      "location": "Cambridge, Dorchester County",
+      "url": "https://www.adzuna.com/land/ad/5428706100?se=0AudAmcH8RGGpqAxbdDRnA&utm_medium=api&utm_source=8f6cdae2&v=B4146DAE68B4435CB605BA465CDC9E7D0714E4C4",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-11T17:30:47.447Z",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "offerId": 5428700940,
+      "apiSource": "Adzuna",
+      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
+      "company": "Milton Hershey School",
+      "location": "Franklin Springs, Franklin County",
+      "url": "https://www.adzuna.com/land/ad/5428700940?se=OL5bH-4H8RGQOOZF3r_HoQ&utm_medium=api&utm_source=8f6cdae2&v=B37A872876B02D71C00A8094BCFD07E1B235AF56",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-12T09:37:58.897Z",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "offerId": 5428700940,
+      "apiSource": "Adzuna",
+      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
+      "company": "Milton Hershey School",
+      "location": "Franklin Springs, Franklin County",
+      "url": "https://www.adzuna.com/land/ad/5428700940?se=vjske-4H8RGLQf4cHi9XYA&utm_medium=api&utm_source=8f6cdae2&v=B37A872876B02D71C00A8094BCFD07E1B235AF56",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-12T09:40:33.118Z",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "offerId": 5625253643,
+      "apiSource": "Adzuna",
+      "title": "Plant Electrician",
+      "company": "Cargill",
+      "location": "Crook, Logan County",
+      "url": "https://www.adzuna.com/land/ad/5625253643?se=wHm8f-4H8RGQOOZF3r_HoQ&utm_medium=api&utm_source=8f6cdae2&v=766298C3E82FF5CB61F5AB31D512A99C0D9C7976",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-12T09:40:39.741Z",
+      "id": 11
     }
   ]
 }

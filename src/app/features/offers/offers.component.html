@@ -1,144 +1,11 @@
 <div class="container mx-auto p-6 bg-gray-50 min-h-screen">
   <!-- Search & Filter Header -->
-  <div class="mb-8">
-    <div
-      class="bg-white/80 w-full backdrop-blur-md rounded-xl p-5 shadow-[0_4px_24px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.6)] border border-white/40"
-    >
-      <h1
-        class="flex items-center gap-2.5 text-[1.4rem] font-extrabold text-[#1e1b4b] mb-5 tracking-tight"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-7 h-7 text-indigo-500"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-        </svg>
-        Job Offers
-      </h1>
+  <app-search-filters-header
+    [isLoading]="isLoading"
+    (search)="onSearch($event)"
+  >
+  </app-search-filters-header>
 
-      <div class="flex gap-3 items-stretch flex-wrap max-sm:flex-col">
-        <!-- Keyword search -->
-        <div class="relative flex-1 min-w-[180px] max-sm:flex-1 max-sm:min-w-0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="search-input-icon absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-slate-400 pointer-events-none transition-colors duration-200"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <input
-            type="text"
-            [(ngModel)]="searchKey"
-            (keydown.enter)="onSearch()"
-            placeholder="Search by keyword..."
-            class="w-full py-2 pl-[42px] pr-3.5 border-[1px] border-slate-200 rounded-md text-[0.88rem] font-medium text-slate-800 bg-slate-50 outline-none transition-all duration-250 hover:border-slate-300 hover:bg-white focus:border-indigo-500 focus:bg-white focus:shadow-[0_0_0_3px_rgba(99,102,241,0.1)] placeholder:text-slate-400 placeholder:font-normal"
-          />
-        </div>
-
-        <!-- Location filter -->
-        <div
-          class="relative flex-[0.7] min-w-[180px] max-sm:flex-1 max-sm:min-w-0"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="search-input-icon absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-slate-400 pointer-events-none transition-colors duration-200"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"
-            />
-            <circle cx="12" cy="11" r="3" />
-          </svg>
-          <input
-            type="text"
-            [(ngModel)]="location"
-            (keydown.enter)="onSearch()"
-            placeholder="Filter by location..."
-            class="w-full py-2 pl-[42px] pr-3.5 border-[1px] border-slate-200 rounded-md text-[0.88rem] font-medium text-slate-800 bg-slate-50 outline-none transition-all duration-250 hover:border-slate-300 hover:bg-white focus:border-indigo-500 focus:bg-white focus:shadow-[0_0_0_3px_rgba(99,102,241,0.1)] placeholder:text-slate-400 placeholder:font-normal"
-          />
-        </div>
-
-        <!-- Country select -->
-        <div
-          class="relative flex-[0.5] min-w-[160px] max-sm:flex-1 max-sm:min-w-0"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="search-input-icon absolute left-3.5 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-slate-400 pointer-events-none transition-colors duration-200"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <line x1="2" y1="12" x2="22" y2="12" />
-            <path
-              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-            />
-          </svg>
-          <select
-            [(ngModel)]="country"
-            (change)="onSearch()"
-            class="search-select w-full py-2 pl-[42px] pr-9 border-[1px] border-slate-200 rounded-md text-[0.88rem] font-medium text-slate-800 bg-slate-50 outline-none cursor-pointer appearance-none transition-all duration-250 hover:border-slate-300 hover:bg-white focus:border-indigo-500 focus:bg-white focus:shadow-[0_0_0_3px_rgba(99,102,241,0.1)]"
-          >
-            <option value="us">🇺🇸 United States</option>
-            <option value="gb">🇬🇧 United Kingdom</option>
-            <option value="fr">🇫🇷 France</option>
-            <option value="de">🇩🇪 Germany</option>
-            <option value="ca">🇨🇦 Canada</option>
-            <option value="au">🇦🇺 Australia</option>
-            <option value="in">🇮🇳 India</option>
-            <option value="nl">🇳🇱 Netherlands</option>
-            <option value="br">🇧🇷 Brazil</option>
-            <option value="it">🇮🇹 Italy</option>
-            <option value="es">🇪🇸 Spain</option>
-          </select>
-        </div>
-
-        <!-- Search button -->
-        <button
-          (click)="onSearch()"
-          class="flex items-center gap-2 py-2 px-6 border-none rounded-md text-[0.88rem] font-bold text-white bg-indigo-500 hover:bg-indigo-600 shadow-gray-300 cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] whitespace-nowrap hover:not-disabled:shadow-[0_6px_24px_rgba(99,102,241,0.45)] hover:not-disabled:-translate-y-px active:not-disabled:scale-[0.97] disabled:opacity-60 disabled:cursor-not-allowed max-sm:justify-center"
-          [disabled]="isLoading"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-[18px] h-[18px]"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          Search
-        </button>
-      </div>
-    </div>
-  </div>
   <div
     *ngIf="isLoading"
     class="flex flex-col items-center justify-center py-20"
@@ -175,7 +42,7 @@
 
       <button
         (click)="goToNextPage()"
-        class="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-sm text-sm font-medium hover:bg-blue-700 transition-all active:scale-95"
+        class="px-6 py-2 bg-indigo-500 text-white rounded-lg shadow-sm text-sm font-medium hover:bg-indigo-600 transition-all active:scale-95"
       >
         next
       </button>

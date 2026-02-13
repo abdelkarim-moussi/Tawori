@@ -3,9 +3,9 @@ import { Offer } from '../../core/types/offer';
 import { OfferService } from '../../core/services/offer.service';
 import { NgIf, NgFor, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TableComponent } from '../../shared/components/table/table/table.component';
 import { ColumnDef } from '../../core/types/column-def';
 import { OfferCardComponent } from '../../shared/components/offer-card/offer-card.component';
+import { SearchFiltersHeaderComponent } from '../../shared/components/search-filters-header/search-filters-header.component';
 
 export const COLUMN_DEFINITIONS: ColumnDef<Offer>[] = [
   { headerText: 'Source', field: 'apiSource' },
@@ -17,7 +17,7 @@ export const COLUMN_DEFINITIONS: ColumnDef<Offer>[] = [
 ];
 @Component({
   selector: 'app-offers',
-  imports: [NgIf, NgFor, TableComponent, OfferCardComponent ,CommonModule, FormsModule],
+  imports: [NgIf, NgFor, OfferCardComponent ,CommonModule, FormsModule, SearchFiltersHeaderComponent],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
@@ -66,7 +66,10 @@ export class OffersComponent implements OnInit, OnDestroy {
     }
   }
 
-  onSearch() {
+  onSearch(filters:{searchKey: string, location: string, country: string}) {
+    this.searchKey = filters.searchKey;
+    this.location = filters.location;
+    this.country = filters.country;
     this.currentPage = 1;
     this.fetchOffers();
   }
