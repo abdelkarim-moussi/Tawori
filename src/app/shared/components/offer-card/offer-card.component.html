@@ -19,13 +19,14 @@
       </div>
 
       <div
-        class="w-[34px] h-[34px] rounded-xl flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-300 text-white shadow-[0_4px_12px_rgba(99,102,241,0.3)] transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-[1.08] group-hover:shadow-[0_6px_20px_rgba(99,102,241,0.45)]"
+        class="w-[34px] h-[34px] rounded-xl flex items-center justify-center bg-gradient-to-br text-white shadow-[0_4px_12px_rgba(99,102,241,0.3)] transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-[1.08] group-hover:shadow-[0_6px_20px_rgba(99,102,241,0.45)]"
+        [ngClass]="
+          existInFavorite
+            ? 'from-red-500 to-red-300'
+            : 'from-indigo-500 to-indigo-300'
+        "
       >
-        <button
-          type="button"
-          class="cursor-pointer"
-          (click)="addToFavorites(application.id!)"
-        >
+        <button type="button" class="cursor-pointer" (click)="addToFavorites()">
           <svg
             class="w-6 h-6"
             aria-hidden="true"

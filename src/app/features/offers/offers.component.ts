@@ -17,7 +17,7 @@ export const COLUMN_DEFINITIONS: ColumnDef<Offer>[] = [
 ];
 @Component({
   selector: 'app-offers',
-  imports: [NgIf, NgFor, OfferCardComponent ,CommonModule, FormsModule, SearchFiltersHeaderComponent],
+  imports: [NgIf, NgFor, OfferCardComponent, CommonModule, FormsModule, SearchFiltersHeaderComponent],
   templateUrl: './offers.component.html',
   styleUrl: './offers.component.css'
 })
@@ -57,16 +57,18 @@ export class OffersComponent implements OnInit, OnDestroy {
   goToNextPage() {
     this.currentPage++;
     this.fetchOffers();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   goToPreviousPage() {
     if (this.currentPage > 1) {
       this.currentPage--;
       this.fetchOffers();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 
-  onSearch(filters:{searchKey: string, location: string, country: string}) {
+  onSearch(filters: { searchKey: string, location: string, country: string }) {
     this.searchKey = filters.searchKey;
     this.location = filters.location;
     this.country = filters.country;

@@ -19,7 +19,7 @@ export class ApplicationApiService {
       return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`)
     }
 
-    getApplicationById(applicationId:number | null):Observable<Application>{
+    getApplicationById(applicationId:string | null):Observable<Application>{
       return this.http.get<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
     }
   

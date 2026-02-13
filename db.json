@@ -15,7 +15,88 @@
       "password": "12345678"
     }
   ],
-  "favorites": [],
+  "favorites": [
+    {
+      "company": "this.offer.company",
+      "offerId": "this.offer.id",
+      "userId": 1,
+      "location": "this.offer.location",
+      "title": "this.offer.title",
+      "id": 1
+    },
+    {
+      "company": "Instacart Shoppers",
+      "offerId": "5621307777",
+      "userId": 1,
+      "location": "Woburn, Middlesex County",
+      "title": "Instacart Shopper - Delivery Driver",
+      "id": 2
+    },
+    {
+      "company": "Premier Transportation",
+      "offerId": "5608602622",
+      "userId": 1,
+      "location": "Oolitic, Lawrence County",
+      "title": "Regional Class A Drivers",
+      "id": 3
+    },
+    {
+      "company": "St. David's North Austin Medical Center",
+      "offerId": "5395908543",
+      "userId": 1,
+      "location": "Balcones, Travis County",
+      "title": "Registered Respiratory Therapist RRT",
+      "id": 4
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713505",
+      "userId": 1,
+      "location": "Benton, Saline County",
+      "title": "Houseparents - Relocation to Hershey, PA Required",
+      "id": 5
+    },
+    {
+      "company": "HCA Healthcare Colleton Hospital",
+      "offerId": "5608450672",
+      "userId": 1,
+      "location": "Bluffton, Beaufort County",
+      "title": "Registered Nurse Med Surg",
+      "id": 6
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428700163",
+      "userId": 1,
+      "location": "Wheeler, Wheeler County",
+      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
+      "id": 7
+    },
+    {
+      "company": "Instacart Shoppers",
+      "offerId": "5621504753",
+      "userId": 1,
+      "location": "Black Lick Township, Indiana County",
+      "title": "Instacart Shopper - Delivery Driver",
+      "id": 8
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713459",
+      "userId": 1,
+      "location": "Prospect Heights, Cook County",
+      "title": "Houseparents - Relocation to Hershey, PA Required",
+      "id": 9
+    },
+    {
+      "company": "Premier Transportation",
+      "offerId": "5626905134",
+      "userId": 1,
+      "location": "Cheraw, Chesterfield County",
+      "title": "Southeast Regional ",
+      "id": 10
+    }
+  ],
   "applications": [
     {
       "userId": 1,
@@ -29,6 +110,175 @@
       "notes": "",
       "dateAdded": "2026-02-13T12:02:41.146Z",
       "id": 3
+    },
+    {
+      "userId": 1,
+      "offerId": 5621504753,
+      "apiSource": "Adzuna",
+      "title": "Instacart Shopper - Delivery Driver",
+      "company": "Instacart Shoppers",
+      "location": "Black Lick Township, Indiana County",
+      "url": "https://www.adzuna.com/land/ad/5621504753?se=Mo6KVOwI8RG37oGTxz0png&utm_medium=api&utm_source=8f6cdae2&v=4E43573943BF47A4E7F31C0D00D1EA66C75032BA",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:38.268Z",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "offerId": 5626905134,
+      "apiSource": "Adzuna",
+      "title": "Southeast Regional ",
+      "company": "Premier Transportation",
+      "location": "Cheraw, Chesterfield County",
+      "url": "https://www.adzuna.com/land/ad/5626905134?se=SERYVuwI8RGj8IcG06-IuQ&utm_medium=api&utm_source=8f6cdae2&v=EEA0577CA44529FB58AF6F9F17745BB09F3DF9B4",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:40.612Z",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "offerId": 5608604860,
+      "apiSource": "Adzuna",
+      "title": "Regional Class A Drivers: $1,000 Annual Longevity Bonus",
+      "company": "Premier Transportation",
+      "location": "Fargo, Clinch County",
+      "url": "https://www.adzuna.com/land/ad/5608604860?se=toW2V-wI8RGj8IcG06-IuQ&utm_medium=api&utm_source=8f6cdae2&v=3C6A20A79F0872F123B871E9B54327B91D068D36",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:43.356Z",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "offerId": 5441785377,
+      "apiSource": "Adzuna",
+      "title": "Occupational Therapist",
+      "company": "Encompass Health Deaconess Rehabilitation Hospital",
+      "location": "Haubstadt, Gibson County",
+      "url": "https://www.adzuna.com/land/ad/5441785377?se=zEXUWewI8RG_EqBvoLA8Gw&utm_medium=api&utm_source=8f6cdae2&v=BDFBB3B0D1C1D244C50A84A1B518670797C7E9B5",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:46.886Z",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "offerId": 5428713459,
+      "apiSource": "Adzuna",
+      "title": "Houseparents - Relocation to Hershey, PA Required",
+      "company": "Milton Hershey School",
+      "location": "Prospect Heights, Cook County",
+      "url": "https://www.adzuna.com/land/ad/5428713459?se=-NciXOwI8RG37oGTxz0png&utm_medium=api&utm_source=8f6cdae2&v=45D8730444A6A766ABC3E290D2CCA5B85A3931AC",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:50.716Z",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "offerId": 5608425334,
+      "apiSource": "Adzuna",
+      "title": "Dialysis RN",
+      "company": "Altru Rehabilitation Hospital",
+      "location": "Fertile, Polk County",
+      "url": "https://www.adzuna.com/land/ad/5608425334?se=uGCgXuwI8RGj8IcG06-IuQ&utm_medium=api&utm_source=8f6cdae2&v=38CFDEF53E1E6D9EF8CB7D2B0C90D2B5C5ECABD4",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:54.836Z",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "offerId": 5590321714,
+      "apiSource": "Adzuna",
+      "title": "Service Technician I",
+      "company": "Securitas Electronic Security",
+      "location": "Allegan, Allegan County",
+      "url": "https://www.adzuna.com/land/ad/5590321714?se=SuhZY-wI8RG37oGTxz0png&utm_medium=api&utm_source=8f6cdae2&v=888EAE0704261CED40BA8A7B5202EA63CCEF5D49",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:03.724Z",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Targeting Officer",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/756782600",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:06.502Z",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Staff Operations Officer",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/756775500",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:10.060Z",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Paramilitary Operations Officer",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/756773100",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:17.573Z",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Foreign Language Instructor",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/789407600",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:22.172Z",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Clinical Psychologist",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/764671200",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:28.197Z",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Collection Management Officer",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/756737500",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:31.372Z",
+      "id": 16
     }
   ]
 }
