@@ -23,8 +23,8 @@ export class ApplicationApiService {
       return this.http.get<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
     }
   
-    updateApplication(applicationId:number, status : string):Observable<Application>{
-      return this.http.put<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`,status)
+    updateApplicationStatus(applicationId:number, status : string):Observable<Application>{
+      return this.http.patch<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`,{status})
     }
   
     deleteApplication(applicationId:number):Observable<Application>{

@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Application } from '../../../core/types/application';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ApplicationApiService } from '../../../core/services/application-api.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-application-card',
   imports: [CommonModule,RouterLink],
@@ -12,21 +13,22 @@ import { ApplicationApiService } from '../../../core/services/application-api.se
 export class ApplicationCardComponent {
   @Input() application!: Application;
 
-  messageType: 'success' | 'error' | null = null;
-  message: string = '';
+  @Output() applicationDeleted = new EventEmitter<number>();
 
-  constructor(private applicationService: ApplicationApiService){}
+  constructor(private applicationService: ApplicationApiService,
+    private toastrService : ToastrService
+  ){}
 
 
   deleteApplication(applicationId: number){
+    console.log("delete")
     this.applicationService.deleteApplication(applicationId).subscribe({
       next:(data)=>{
-        this.messageType = "success";
-        this.message = "application withdrawed succefully"
+        this.applicationDeleted.emit(applicationId);
+        this.toastrService.success("Application Withdrawn Succefully","success")
       },
       error:(error)=>{
-        this.messageType = "error";
-        this.message = "Error Withdrawing This Application"
+        this.toastrService.error("Error Withdrawing This Application","error")
       }
     });
   }
