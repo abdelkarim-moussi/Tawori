@@ -16,6 +16,8 @@ export class ApplicationDetailsComponent implements OnInit {
   application: Application | null = null;
   @Input() newStatus: string = "";
 
+  statuses: Array<any> = Array.of("pending","applied","interview","rejected","accepted","offered")
+
   constructor(private activatedRoute: ActivatedRoute, 
     private applicationService: ApplicationApiService,
   private toastService: ToastrService){}

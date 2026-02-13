@@ -21,7 +21,11 @@
       <div
         class="w-[34px] h-[34px] rounded-xl flex items-center justify-center bg-gradient-to-br from-indigo-500 to-indigo-300 text-white shadow-[0_4px_12px_rgba(99,102,241,0.3)] transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-[1.08] group-hover:shadow-[0_6px_20px_rgba(99,102,241,0.45)]"
       >
-        <a>
+        <button
+          type="button"
+          class="cursor-pointer"
+          (click)="addToFavorites(application.id!)"
+        >
           <svg
             class="w-6 h-6"
             aria-hidden="true"
@@ -39,7 +43,7 @@
               d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
             />
           </svg>
-        </a>
+        </button>
       </div>
     </div>
 
@@ -50,51 +54,57 @@
       {{ offer.title }}
     </h2>
 
-    <!-- Company -->
-    <div class="flex items-center gap-1.5 mb-1.5 text-[0.8rem] text-slate-600">
+    <div class="flex gap-x-5 justify-between">
+      <!-- Company -->
       <div
-        class="w-6 h-6 rounded-lg flex items-center justify-center bg-indigo-500/[0.08] text-indigo-500 shrink-0"
+        class="flex items-center gap-1.5 mb-1.5 text-[0.8rem] text-slate-600"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-3.5 h-3.5"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+        <div
+          class="w-6 h-6 rounded-lg flex items-center justify-center bg-indigo-500/[0.08] text-indigo-500 shrink-0"
         >
-          <path
-            d="M21 13.255A23.931 23.931 0 0 1 12 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2m4 6h.01M5 20h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"
-          />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-3.5 h-3.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M21 13.255A23.931 23.931 0 0 1 12 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2m4 6h.01M5 20h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"
+            />
+          </svg>
+        </div>
+        <span class="font-semibold text-slate-700">{{ offer.company }}</span>
       </div>
-      <span class="font-semibold text-slate-700">{{ offer.company }}</span>
-    </div>
 
-    <!-- Location -->
-    <div class="flex items-center gap-1.5 mb-1.5 text-[0.8rem] text-slate-600">
+      <!-- Location -->
       <div
-        class="w-6 h-6 rounded-lg flex items-center justify-center bg-red-500/[0.08] text-red-500 shrink-0"
+        class="flex items-center gap-1.5 mb-1.5 text-[0.8rem] text-slate-600"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-3.5 h-3.5"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+        <div
+          class="w-6 h-6 rounded-lg flex items-center justify-center bg-red-500/[0.08] text-red-500 shrink-0"
         >
-          <path
-            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"
-          />
-          <circle cx="12" cy="11" r="3" />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-3.5 h-3.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"
+            />
+            <circle cx="12" cy="11" r="3" />
+          </svg>
+        </div>
+        <span>{{ offer.location }}</span>
       </div>
-      <span>{{ offer.location }}</span>
     </div>
 
     <!-- Date -->

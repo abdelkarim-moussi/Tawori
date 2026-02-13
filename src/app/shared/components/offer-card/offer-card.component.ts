@@ -4,6 +4,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { ApplicationApiService } from '../../../core/services/application-api.service';
 import { Application } from '../../../core/types/application';
 import { Router } from '@angular/router';
+import { FavoriteApiService } from '../../../core/services/favorite-api.service';
 
 @Component({
   selector: 'app-offer-card',
@@ -17,11 +18,15 @@ export class OfferCardComponent {
   messageType: 'success' | 'error' | 'info' | null = null;
   alreadyApplied: boolean = false;
 
-  constructor(private applicationService: ApplicationApiService, private router: Router){}
+  application!: Application;
+
+  constructor(private applicationService: ApplicationApiService,
+    private router: Router,
+  private favoriteService: FavoriteApiService){}
 
   trackApplication(){
 
-    let application: Application = {
+    this.application = {
       userId: 1, 
       offerId: Number(this.offer.id),
       apiSource: this.offer.apiSource,
@@ -34,7 +39,7 @@ export class OfferCardComponent {
       dateAdded: new Date().toISOString()
     };
 
-    this.applicationService.checkIfAlreadyApplied(application.userId,application.offerId).subscribe(
+    this.applicationService.checkIfAlreadyApplied(this.application.userId,this.application.offerId).subscribe(
       {
         next:(applied)=>{
           this.alreadyApplied = applied;
@@ -43,7 +48,7 @@ export class OfferCardComponent {
     )
 
     if(!this.alreadyApplied){
-      this.processApplication(application);
+      this.processApplication(this.application);
     }
     
   }
@@ -63,5 +68,14 @@ export class OfferCardComponent {
       }
     }
     );
+  }
+
+
+  addToFavorites(applicationId: number){
+
+  }
+
+  verifyIfApplicationIsInFavorite(applicationId: number){
+    this.favoriteService.getFavoriteById()
   }
 }

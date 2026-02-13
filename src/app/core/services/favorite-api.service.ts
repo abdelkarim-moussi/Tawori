@@ -26,4 +26,12 @@ export class FavoriteApiService {
   removeFromFavorite(favoriteId: number):Observable<any>{
     return this.http.delete<any>(`${environment.jsonServerUrl}/favorites/${favoriteId}`);
   }
+
+  getfavoriteByOfferId(offerId: number){
+    return this.http.get<Favorite>(`${environment.jsonServerUrl}/favorites`,{
+      params:{
+        offerId: offerId
+      }
+    })
+  }
 }
