@@ -1,5 +1,6 @@
 import { Favorite } from "../../core/types/favorite";
-import {createReducer} from "@ngrx/store";
+import {createReducer, on} from "@ngrx/store";
+import * as FavoritesActions from './favorite.actions'
 
 export interface favoriteState{
     favorites: Favorite[];
@@ -15,7 +16,7 @@ export const initialState: favoriteState = {
 
 export const favoriteReducer = createReducer(
     initialState,
-    on(FavoriteActions.loadFavorites,(state) => ({
+    on(FavoritesActions.loadFavorites, (state) => ({
         ...state,
         loading: true,
         error: null
