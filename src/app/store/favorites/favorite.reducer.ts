@@ -20,5 +20,48 @@ export const favoriteReducer = createReducer(
         ...state,
         loading: true,
         error: null
+    })),
+    on(FavoritesActions.loadFavoritesSuccess,(state,{ favorites })=>({
+        ...state,
+        loading: false,
+        favorites,
+        error: null
+    })),
+    on(FavoritesActions.loadFavoritesFailure,(state,{ error })=>({
+        ...state,
+        loading: false,
+        error
+    })),
+    on(FavoritesActions.addToFavorites,(state)=>({
+        ...state,
+        loading: true,
+        error: null
+    })),
+    on(FavoritesActions.addToFavoritesSuccess,(state,{favorite})=>({
+        ...state,
+        loading: true,
+        favorite,
+        error: null
+    })),
+    on(FavoritesActions.addToFavoritesFailure,(state,{error})=>({
+        ...state,
+        loading: false,
+        error
+    })),
+    on(FavoritesActions.removeFromFavorites,(state)=>({
+        ...state,
+        loading: true,
+        error:null
+    })),
+    on(FavoritesActions.removeFromFavoritesSuccess,(state,{offerId})=>({
+        ...state,
+        loading: false,
+        offerId,
+        error: null
+    })),
+    on(FavoritesActions.removeFromFavoritesFailure,(state,{error})=>({
+        ...state,
+        loading: false,
+        error
     }))
 );
