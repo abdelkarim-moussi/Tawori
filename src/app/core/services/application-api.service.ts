@@ -9,37 +9,37 @@ import { Application } from '../types/application';
 })
 export class ApplicationApiService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-    createApplication(application: Application):Observable<Application>{
-      return this.http.post<Application>(`${environment.jsonServerUrl}/applications`,application);
-    }
+  createApplication(application: Application): Observable<Application> {
+    return this.http.post<Application>(`${environment.jsonServerUrl}/applications`, application);
+  }
 
-    getMyApplications():Observable<Application[]>{
-      return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`)
-    }
+  getMyApplications(): Observable<Application[]> {
+    return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`)
+  }
 
-    getApplicationById(applicationId:string | null):Observable<Application>{
-      return this.http.get<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
-    }
-  
-    updateApplicationStatus(applicationId:number, status : string):Observable<Application>{
-      return this.http.patch<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`,{status})
-    }
-  
-    deleteApplication(applicationId:number):Observable<Application>{
-      return this.http.delete<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
-    }
+  getApplicationById(applicationId: string | null): Observable<Application> {
+    return this.http.get<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
+  }
 
-    checkIfAlreadyApplied(userId: number, offerId: number): Observable<boolean>{
-      return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`,{
-        params: {
-          usersId : userId,
-          offerId : offerId
-        }
-      }).pipe(
-        map(applications => applications.length > 0)
-      )
-    }
-  
+  updateApplicationStatus(applicationId: number, status: string): Observable<Application> {
+    return this.http.patch<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`, { status })
+  }
+
+  deleteApplication(applicationId: number): Observable<Application> {
+    return this.http.delete<Application>(`${environment.jsonServerUrl}/applications/${applicationId}`)
+  }
+
+  checkIfAlreadyApplied(userId: number, offerId: number): Observable<boolean> {
+    return this.http.get<Application[]>(`${environment.jsonServerUrl}/applications`, {
+      params: {
+        userId: userId,
+        offerId: offerId
+      }
+    }).pipe(
+      map(applications => applications.length > 0)
+    )
+  }
+
 }
