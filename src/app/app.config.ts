@@ -6,6 +6,10 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
+import { favoriteReducer } from './store/favorites/favorite.reducer';
+import { FavoriteEffects } from './store/favorites/favorite.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
@@ -21,5 +25,7 @@ export const appConfig: ApplicationConfig = {
     easing: 'ease-in-out',
     easeTime: 300,
   }),
-  provideAnimations()]
+  provideAnimations(),
+  provideStore({ favorites: favoriteReducer }),
+  provideEffects([FavoriteEffects])]
 };
