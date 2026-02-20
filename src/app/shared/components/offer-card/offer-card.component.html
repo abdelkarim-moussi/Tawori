@@ -13,23 +13,21 @@
         {{ offer.apiSource }}
       </div>
 
-      <ng-container *ngIf="{ isFav: (existInFavorite$ | async) } as fav">
-        <div
-          class="w-[34px] h-[34px] rounded-xl flex items-center justify-center bg-gradient-to-br text-white shadow-[0_4px_12px_rgba(99,102,241,0.3)] transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-[1.08] group-hover:shadow-[0_6px_20px_rgba(99,102,241,0.45)]"
-          [ngClass]="
-          fav.isFav
+      <div
+        class="w-[34px] h-[34px] rounded-xl flex items-center justify-center bg-gradient-to-br text-white shadow-[0_4px_12px_rgba(99,102,241,0.3)] transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-[1.08] group-hover:shadow-[0_6px_20px_rgba(99,102,241,0.45)]"
+        [ngClass]="
+          existInFavorite
             ? 'from-red-500 to-red-300'
             : 'from-indigo-500 to-indigo-300'
         ">
-          <button type="button" class="cursor-pointer" (click)="toggleFavorite(!!fav.isFav)">
-            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
-            </svg>
-          </button>
-        </div>
-      </ng-container>
+        <button type="button" class="cursor-pointer" (click)="addToFavorites()">
+          <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+            viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Title -->
@@ -74,7 +72,7 @@
         <line x1="8" y1="2" x2="8" y2="6" />
         <line x1="3" y1="10" x2="21" y2="10" />
       </svg>
-      <span>{{ offer.createdAt | date: "dd-mm-yyyy" }}</span>
+      <span>{{ offer.createdAt | date: "dd-MM-yyyy" }}</span>
     </div>
 
     <!-- CTA Buttons -->
