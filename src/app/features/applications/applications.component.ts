@@ -48,7 +48,7 @@ export class ApplicationsComponent implements OnInit {
     )
   }
 
-  onSearch(filters: { searchKey: string, location: string }) {
+  onSearch(filters: { searchKey: string, location: string, country: string }) {
     this.isLoading = true;
     this.filtredApplications = [];
     const key = filters.searchKey.toLowerCase()
