@@ -3,7 +3,6 @@ import { Actions, createEffect, ofType } from '@ngrx/effects'
 import { FavoriteApiService } from "../../core/services/favorite-api.service";
 import * as FavoritesActions from './favorite.actions'
 import { catchError, map, mergeMap, of } from "rxjs";
-import { Favorite } from "../../core/types/favorite";
 
 @Injectable()
 export class FavoriteEffects {
@@ -28,9 +27,9 @@ export class FavoriteEffects {
     addToFavorites$ = createEffect(() =>
         this.actions$.pipe(
             ofType(FavoritesActions.addToFavorites),
-            mergeMap(({ offerId }) =>
-                this.favoriteService.addTofavorite({ offerId, userId: 1, title: '', company: '', location: '' } as Favorite).pipe(
-                    map((favorite) => FavoritesActions.addToFavoritesSuccess({ favorite })),
+            mergeMap(({ favorite }) =>
+                this.favoriteService.addTofavorite(favorite).pipe(
+                    map((savedFavorite) => FavoritesActions.addToFavoritesSuccess({ favorite: savedFavorite })),
                     catchError((error) =>
                         of(FavoritesActions.addToFavoritesFailure({
                             error: error.message || "Failed To Add To Favorites"

@@ -1,11 +1,14 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Offer } from '../../../core/types/offer';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ApplicationApiService } from '../../../core/services/application-api.service';
 import { Application } from '../../../core/types/application';
 import { Router } from '@angular/router';
-import { FavoriteApiService } from '../../../core/services/favorite-api.service';
 import { Favorite } from '../../../core/types/favorite';
+import { Store } from '@ngrx/store';
+import * as FavoritesActions from '../../../store/favorites/favorite.actions';
+import { selectIsFavorite } from '../../../store/favorites/favorite.selectors';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-offer-card',
@@ -20,16 +23,17 @@ export class OfferCardComponent implements OnInit {
   alreadyApplied: boolean = false;
 
   application!: Application;
-  favorite!: Favorite;
 
-  existInFavorite: boolean = false;
+  existInFavorite$!: Observable<boolean>;
 
-  constructor(private applicationService: ApplicationApiService,
+  constructor(
+    private applicationService: ApplicationApiService,
     private router: Router,
-    private favoriteService: FavoriteApiService) { }
+    private store: Store
+  ) { }
 
   ngOnInit(): void {
-    this.verifyIfOfferIsInFavorite();
+    this.existInFavorite$ = this.store.select(selectIsFavorite(this.offer.id));
   }
 
   trackApplication() {
@@ -72,9 +76,8 @@ export class OfferCardComponent implements OnInit {
     });
   }
 
-  addToFavorites() {
-    if (!this.existInFavorite) {
-
+  toggleFavorite(isCurrentlyFavorite: boolean) {
+    if (!isCurrentlyFavorite) {
       const newFavorite: Favorite = {
         company: this.offer.company,
         offerId: this.offer.id,
@@ -82,45 +85,9 @@ export class OfferCardComponent implements OnInit {
         location: this.offer.location,
         title: this.offer.title
       };
-
-      this.favoriteService.addTofavorite(newFavorite).subscribe({
-        next: (data) => {
-          this.favorite = data;
-          this.existInFavorite = true;
-        },
-        error: (error) => {
-          console.error("Failed To Add Offer To Favorite ", error);
-        }
-      });
+      this.store.dispatch(FavoritesActions.addToFavorites({ favorite: newFavorite }));
     } else {
-
-      if (this.favorite?.id) {
-        this.favoriteService.removeFromFavorite(this.favorite.id).subscribe({
-          next: () => {
-            this.existInFavorite = false;
-          },
-          error: (error) => {
-            console.error("Failed To Remove Offer From Favorites ", error);
-          }
-        });
-      }
+      this.store.dispatch(FavoritesActions.removeFromFavorites({ offerId: this.offer.id }));
     }
-  }
-
-  verifyIfOfferIsInFavorite() {
-    this.favoriteService.getfavoriteByOfferId(this.offer.id).subscribe({
-      next: (data: any) => {
-        const favorites = Array.isArray(data) ? data : [data];
-        if (favorites.length > 0 && favorites[0].id) {
-          this.existInFavorite = true;
-          this.favorite = favorites[0];
-        } else {
-          this.existInFavorite = false;
-        }
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    });
   }
 }
