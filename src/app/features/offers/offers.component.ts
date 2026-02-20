@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { ColumnDef } from '../../core/types/column-def';
 import { OfferCardComponent } from '../../shared/components/offer-card/offer-card.component';
 import { SearchFiltersHeaderComponent } from '../../shared/components/search-filters-header/search-filters-header.component';
+import { Store } from '@ngrx/store';
+import * as FavoritesActions from '../../store/favorites/favorite.actions';
 
 export const COLUMN_DEFINITIONS: ColumnDef<Offer>[] = [
   { headerText: 'Source', field: 'apiSource' },
@@ -23,7 +25,7 @@ export const COLUMN_DEFINITIONS: ColumnDef<Offer>[] = [
 })
 export class OffersComponent implements OnInit, OnDestroy {
 
-  constructor(private offerService: OfferService) { }
+  constructor(private offerService: OfferService, private store: Store) { }
 
   offers: Offer[] = [];
   currentPage: number = 1;
@@ -77,6 +79,7 @@ export class OffersComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.store.dispatch(FavoritesActions.loadFavorites());
     this.fetchOffers();
   }
 
@@ -85,3 +88,4 @@ export class OffersComponent implements OnInit, OnDestroy {
   }
 
 }
+
