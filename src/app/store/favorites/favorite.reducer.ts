@@ -1,8 +1,8 @@
 import { Favorite } from "../../core/types/favorite";
-import {createReducer, on} from "@ngrx/store";
+import { createReducer, on } from "@ngrx/store";
 import * as FavoritesActions from './favorite.actions'
 
-export interface favoriteState{
+export interface favoriteState {
     favorites: Favorite[];
     loading: boolean,
     error: string | null
@@ -21,45 +21,45 @@ export const favoriteReducer = createReducer(
         loading: true,
         error: null
     })),
-    on(FavoritesActions.loadFavoritesSuccess,(state,{ favorites })=>({
+    on(FavoritesActions.loadFavoritesSuccess, (state, { favorites }) => ({
         ...state,
         loading: false,
         favorites,
         error: null
     })),
-    on(FavoritesActions.loadFavoritesFailure,(state,{ error })=>({
+    on(FavoritesActions.loadFavoritesFailure, (state, { error }) => ({
         ...state,
         loading: false,
         error
     })),
-    on(FavoritesActions.addToFavorites,(state)=>({
+    on(FavoritesActions.addToFavorites, (state) => ({
         ...state,
         loading: true,
         error: null
     })),
-    on(FavoritesActions.addToFavoritesSuccess,(state,{favorite})=>({
+    on(FavoritesActions.addToFavoritesSuccess, (state, { favorite }) => ({
         ...state,
-        loading: true,
-        favorite,
+        loading: false,
+        favorites: [...state.favorites, favorite],
         error: null
     })),
-    on(FavoritesActions.addToFavoritesFailure,(state,{error})=>({
+    on(FavoritesActions.addToFavoritesFailure, (state, { error }) => ({
         ...state,
         loading: false,
         error
     })),
-    on(FavoritesActions.removeFromFavorites,(state)=>({
+    on(FavoritesActions.removeFromFavorites, (state) => ({
         ...state,
         loading: true,
-        error:null
-    })),
-    on(FavoritesActions.removeFromFavoritesSuccess,(state,{offerId})=>({
-        ...state,
-        loading: false,
-        offerId,
         error: null
     })),
-    on(FavoritesActions.removeFromFavoritesFailure,(state,{error})=>({
+    on(FavoritesActions.removeFromFavoritesSuccess, (state, { offerId }) => ({
+        ...state,
+        loading: false,
+        favorites: state.favorites.filter(f => f.offerId !== offerId),
+        error: null
+    })),
+    on(FavoritesActions.removeFromFavoritesFailure, (state, { error }) => ({
         ...state,
         loading: false,
         error
