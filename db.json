@@ -95,6 +95,38 @@
       "location": "Cheraw, Chesterfield County",
       "title": "Southeast Regional ",
       "id": 10
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5509017801",
+      "userId": 1,
+      "location": "Brevard, Transylvania County",
+      "title": "Licensed Practical Nurse Emergency Department PRN",
+      "id": 11
+    },
+    {
+      "company": "HCA Florida North Florida Hospital",
+      "offerId": "5608081476",
+      "userId": 1,
+      "location": "Gainesville, Alachua County",
+      "title": "Registered Nurse- Medical Surgical-Nights",
+      "id": 12
+    },
+    {
+      "company": "Methodist Hospital Westover Hills",
+      "offerId": "5490285173",
+      "userId": 1,
+      "location": "Universal City, Bexar County",
+      "title": "CT Tech",
+      "id": 13
+    },
+    {
+      "company": "Instacart Shoppers",
+      "offerId": "5631684004",
+      "userId": 1,
+      "location": "Silver Creek, Schuylkill County",
+      "title": "Shop and Deliver - No Experience Required",
+      "id": 14
     }
   ],
   "applications": [
@@ -119,7 +151,7 @@
       "company": "Instacart Shoppers",
       "location": "Black Lick Township, Indiana County",
       "url": "https://www.adzuna.com/land/ad/5621504753?se=Mo6KVOwI8RG37oGTxz0png&utm_medium=api&utm_source=8f6cdae2&v=4E43573943BF47A4E7F31C0D00D1EA66C75032BA",
-      "status": "Pending",
+      "status": "applied",
       "notes": "",
       "dateAdded": "2026-02-13T15:57:38.268Z",
       "id": 4
@@ -279,6 +311,19 @@
       "notes": "",
       "dateAdded": "2026-02-13T15:58:31.372Z",
       "id": 16
+    },
+    {
+      "userId": 1,
+      "offerId": 5608081476,
+      "apiSource": "Adzuna",
+      "title": "Registered Nurse- Medical Surgical-Nights",
+      "company": "HCA Florida North Florida Hospital",
+      "location": "Gainesville, Alachua County",
+      "url": "https://www.adzuna.com/land/ad/5608081476?se=_laF0XUO8RGDeqGWOsMo6Q&utm_medium=api&utm_source=8f6cdae2&v=5F65FB25A7554C3311C90211F0258A63CDA0C3EF",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-20T17:04:27.974Z",
+      "id": 17
     }
   ]
 }
