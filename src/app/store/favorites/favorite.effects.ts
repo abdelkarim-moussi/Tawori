@@ -28,15 +28,9 @@ export class FavoriteEffects {
     addToFavorites$ = createEffect(() =>
         this.actions$.pipe(
             ofType(FavoritesActions.addToFavorites),
-            mergeMap(({ offerId }) =>
-                this.favoriteService.getfavoriteByOfferId(offerId).pipe(
-                    mergeMap((data: any) => {
-                        const favorites = Array.isArray(data) ? data : [data];
-                        if (favorites.length > 0 && favorites[0].id) {
-                            return of(FavoritesActions.addToFavoritesSuccess({ favorite: favorites[0] }));
-                        }
-                        return of(FavoritesActions.addToFavoritesFailure({ error: 'Favorite not found after add' }));
-                    }),
+            mergeMap(({ favorite }) =>
+                this.favoriteService.addTofavorite(favorite).pipe(
+                    map((saved) => FavoritesActions.addToFavoritesSuccess({ favorite: saved })),
                     catchError((error) =>
                         of(FavoritesActions.addToFavoritesFailure({
                             error: error.message || "Failed To Add To Favorites"
@@ -49,21 +43,9 @@ export class FavoriteEffects {
     removeFromFavorites$ = createEffect(() =>
         this.actions$.pipe(
             ofType(FavoritesActions.removeFromFavorites),
-            mergeMap(({ offerId }) =>
-                this.favoriteService.getfavoriteByOfferId(offerId).pipe(
-                    mergeMap((data: any) => {
-                        const favorites = Array.isArray(data) ? data : [data];
-                        if (favorites.length > 0 && favorites[0].id) {
-                            return this.favoriteService.removeFromFavorite(favorites[0].id).pipe(
-                                map(() => FavoritesActions.removeFromFavoritesSuccess({ offerId })),
-                                catchError((error) =>
-                                    of(FavoritesActions.removeFromFavoritesFailure({
-                                        error: error.message || "Failed To Remove From Favorites"
-                                    })))
-                            );
-                        }
-                        return of(FavoritesActions.removeFromFavoritesFailure({ error: 'Favorite not found' }));
-                    }),
+            mergeMap(({ favoriteId, offerId }) =>
+                this.favoriteService.removeFromFavorite(favoriteId).pipe(
+                    map(() => FavoritesActions.removeFromFavoritesSuccess({ offerId })),
                     catchError((error) =>
                         of(FavoritesActions.removeFromFavoritesFailure({
                             error: error.message || "Failed To Remove From Favorites"

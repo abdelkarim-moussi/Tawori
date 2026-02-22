@@ -6,6 +6,9 @@ import { Application } from '../../../core/types/application';
 import { Router } from '@angular/router';
 import { FavoriteApiService } from '../../../core/services/favorite-api.service';
 import { Favorite } from '../../../core/types/favorite';
+import { Store } from '@ngrx/store';
+import * as FavoritesActions from "../../../store/favorites/favorite.actions";
+import { selectFavoriteByOfferId } from '../../../store/favorites/favorite.selector';
 
 @Component({
   selector: 'app-offer-card',
@@ -26,9 +29,18 @@ export class OfferCardComponent implements OnInit {
 
   constructor(private applicationService: ApplicationApiService,
     private router: Router,
-    private favoriteService: FavoriteApiService) { }
+    private favoriteService: FavoriteApiService,
+    private store: Store) { }
 
   ngOnInit(): void {
+    this.store.dispatch(FavoritesActions.loadFavorites())
+
+    this.store.select(selectFavoriteByOfferId(this.offer.id)).subscribe(
+      favorite => {
+        this.existInFavorite = !!favorite,
+        this.favorite = favorite
+      }
+    )
     this.verifyIfOfferIsInFavorite();
   }
 
@@ -73,7 +85,9 @@ export class OfferCardComponent implements OnInit {
   }
 
   addToFavorites() {
-    if (!this.existInFavorite) {
+    if (this.existInFavorite) {
+      this.store.dispatch(FavoritesActions.removeFromFavorites({offerId : this.offer.id}))
+    } else {
 
       const newFavorite: Favorite = {
         company: this.offer.company,
@@ -83,27 +97,7 @@ export class OfferCardComponent implements OnInit {
         title: this.offer.title
       };
 
-      this.favoriteService.addTofavorite(newFavorite).subscribe({
-        next: (data) => {
-          this.favorite = data;
-          this.existInFavorite = true;
-        },
-        error: (error) => {
-          console.error("Failed To Add Offer To Favorite ", error);
-        }
-      });
-    } else {
-
-      if (this.favorite?.id) {
-        this.favoriteService.removeFromFavorite(this.favorite.id).subscribe({
-          next: () => {
-            this.existInFavorite = false;
-          },
-          error: (error) => {
-            console.error("Failed To Remove Offer From Favorites ", error);
-          }
-        });
-      }
+      this.store.dispatch(FavoritesActions.addToFavorites({favorite: newFavorite}))
     }
   }
 
