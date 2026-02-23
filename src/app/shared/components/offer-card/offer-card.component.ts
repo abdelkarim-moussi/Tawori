@@ -1,14 +1,14 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Offer } from '../../../core/types/offer';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ApplicationApiService } from '../../../core/services/application-api.service';
 import { Application } from '../../../core/types/application';
 import { Router } from '@angular/router';
-import { FavoriteApiService } from '../../../core/services/favorite-api.service';
 import { Favorite } from '../../../core/types/favorite';
 import { Store } from '@ngrx/store';
 import * as FavoritesActions from "../../../store/favorites/favorite.actions";
 import { selectFavoriteByOfferId } from '../../../store/favorites/favorite.selector';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-offer-card',
@@ -16,32 +16,36 @@ import { selectFavoriteByOfferId } from '../../../store/favorites/favorite.selec
   templateUrl: './offer-card.component.html',
   styleUrl: './offer-card.component.css'
 })
-export class OfferCardComponent implements OnInit {
+export class OfferCardComponent implements OnInit, OnDestroy {
   @Input() offer!: Offer;
   message: string | null = null;
   messageType: 'success' | 'error' | 'info' | null = null;
   alreadyApplied: boolean = false;
 
   application!: Application;
-  favorite!: Favorite;
+  favorite: Favorite | null = null;
 
   existInFavorite: boolean = false;
 
+  private favoriteSub!: Subscription;
+
   constructor(private applicationService: ApplicationApiService,
     private router: Router,
-    private favoriteService: FavoriteApiService,
     private store: Store) { }
 
   ngOnInit(): void {
-    this.store.dispatch(FavoritesActions.loadFavorites())
+    this.store.dispatch(FavoritesActions.loadFavorites());
 
-    this.store.select(selectFavoriteByOfferId(this.offer.id)).subscribe(
+    this.favoriteSub = this.store.select(selectFavoriteByOfferId(this.offer.id)).subscribe(
       favorite => {
-        this.existInFavorite = !!favorite,
-        this.favorite = favorite
+        this.existInFavorite = !!favorite;
+        this.favorite = favorite;
       }
-    )
-    this.verifyIfOfferIsInFavorite();
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.favoriteSub?.unsubscribe();
   }
 
   trackApplication() {
@@ -85,10 +89,12 @@ export class OfferCardComponent implements OnInit {
   }
 
   addToFavorites() {
-    if (this.existInFavorite) {
-      this.store.dispatch(FavoritesActions.removeFromFavorites({offerId : this.offer.id}))
+    if (this.existInFavorite && this.favorite?.id) {
+      this.store.dispatch(FavoritesActions.removeFromFavorites({
+        favoriteId: this.favorite.id,
+        offerId: this.offer.id
+      }));
     } else {
-
       const newFavorite: Favorite = {
         company: this.offer.company,
         offerId: this.offer.id,
@@ -96,25 +102,7 @@ export class OfferCardComponent implements OnInit {
         location: this.offer.location,
         title: this.offer.title
       };
-
-      this.store.dispatch(FavoritesActions.addToFavorites({favorite: newFavorite}))
+      this.store.dispatch(FavoritesActions.addToFavorites({ favorite: newFavorite }));
     }
-  }
-
-  verifyIfOfferIsInFavorite() {
-    this.favoriteService.getfavoriteByOfferId(this.offer.id).subscribe({
-      next: (data: any) => {
-        const favorites = Array.isArray(data) ? data : [data];
-        if (favorites.length > 0 && favorites[0].id) {
-          this.existInFavorite = true;
-          this.favorite = favorites[0];
-        } else {
-          this.existInFavorite = false;
-        }
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    });
   }
 }
