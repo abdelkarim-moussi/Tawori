@@ -337,54 +337,6 @@ favoritesOffers
 applications
 Tests réalisés
 
-Tests manuels effectués :
-
-Authentification
-
-Inscription utilisateur
-
-Connexion utilisateur
-
-Déconnexion
-
-Protection des routes
-
-Favoris
-
-Ajout favoris
-
-Suppression favoris
-
-Non duplication
-
-Candidatures
-
-Ajout candidature
-
-Modification statut
-
-Suppression candidature
-
-Recherche
-
-Recherche par titre
-
-Filtre localisation
-
-Pagination
-
-Loader
-
-Améliorations possibles
-
-Backend Spring Boot ou NodeJS
-
-Authentification JWT
-
-Upload CV
-
-Notifications
-
 Tests unitaires
 
 Docker
