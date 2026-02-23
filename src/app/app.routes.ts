@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
+import { guessGuard } from './core/guards/guess.guard';
 export const routes: Routes = [
 
     {
@@ -23,10 +24,17 @@ export const routes: Routes = [
     },
     {
         path: 'register',
-        loadComponent: () => import('./features/authentication/register/register.component').then(m => m.RegisterComponent)
+        loadComponent: () => import('./features/authentication/register/register.component').then(m => m.RegisterComponent),
+        canActivate: [guessGuard]
     },
     {
         path: 'login',
-        loadComponent: () => import('./features/authentication/login/login.component').then(m => m.LoginComponent)
+        loadComponent: () => import('./features/authentication/login/login.component').then(m => m.LoginComponent),
+        canActivate: [guessGuard]
+    },
+    {
+        path: 'profile',
+        loadComponent: () => import('./features/authentication/profile/profile.component').then(m => m.ProfileComponent),
+        canActivate: [authGuard]
     }
 ];
