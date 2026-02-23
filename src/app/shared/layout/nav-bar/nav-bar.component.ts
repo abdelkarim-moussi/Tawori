@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-nav-bar',
@@ -17,6 +18,12 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkAuth();
+
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.checkAuth();
+    });
   }
 
   checkAuth(): void {
