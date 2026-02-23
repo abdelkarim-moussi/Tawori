@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { UserApiService } from '../../../core/services/user-api.service';
 import { User } from '../../../core/types/user';
 import { ToastrService } from 'ngx-toastr';
+import { hashPassword } from '../../../core/utils/hash.util';
 
 @Component({
   selector: 'app-register',
@@ -49,28 +50,30 @@ export class RegisterComponent {
 
     this.isSubmitting = true;
 
-    const user: User = {
-      id: 0,
-      firstName: this.registerForm.value.firstName!,
-      lastName: this.registerForm.value.lastName!,
-      email: this.registerForm.value.email!,
-      password: this.registerForm.value.password!
-    };
+    hashPassword(this.registerForm.value.password!).then(hashedPassword => {
+      const user: User = {
+        id: 0,
+        firstName: this.registerForm.value.firstName!,
+        lastName: this.registerForm.value.lastName!,
+        email: this.registerForm.value.email!,
+        password: hashedPassword
+      };
 
-    this.userService.addUser(user).subscribe({
-      next: (registeredUser) => {
-        localStorage.setItem('user', JSON.stringify({
-          'id': String(registeredUser.id),
-          'email': registeredUser.email
-        }));
-        this.toastr.success('Account created successfully!');
-        this.router.navigate(['/offers']);
-      },
-      error: (error) => {
-        console.error('Registration failed:', error);
-        this.toastr.error('Registration failed. Please try again.');
-        this.isSubmitting = false;
-      }
+      this.userService.addUser(user).subscribe({
+        next: (registeredUser) => {
+          localStorage.setItem('user', JSON.stringify({
+            'id': String(registeredUser.id),
+            'email': registeredUser.email
+          }));
+          this.toastr.success('Account created successfully!');
+          this.router.navigate(['/offers']);
+        },
+        error: (error) => {
+          console.error('Registration failed:', error);
+          this.toastr.error('Registration failed. Please try again.');
+          this.isSubmitting = false;
+        }
+      });
     });
   }
 }
