@@ -13,120 +13,197 @@
       "lastName": "moussi",
       "email": "moussi@gmail.com",
       "password": "12345678"
+    },
+    {
+      "id": 3,
+      "firstName": "abdelkarim",
+      "lastName": "moussi",
+      "email": "moussi@tawori.com",
+      "password": "12345678"
+    },
+    {
+      "id": 4,
+      "firstName": "ahmed",
+      "lastName": "ali",
+      "email": "ali@tawori.com",
+      "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
     }
   ],
   "favorites": [
     {
-      "company": "this.offer.company",
-      "offerId": "this.offer.id",
+      "company": "Del Sol Medical Center",
+      "offerId": "5610407486",
       "userId": 1,
-      "location": "this.offer.location",
-      "title": "this.offer.title",
-      "id": 1
-    },
-    {
-      "company": "Instacart Shoppers",
-      "offerId": "5621307777",
-      "userId": 1,
-      "location": "Woburn, Middlesex County",
-      "title": "Instacart Shopper - Delivery Driver",
+      "location": "Socorro, El Paso County",
+      "title": "CT Technologist",
       "id": 2
     },
     {
-      "company": "Premier Transportation",
-      "offerId": "5608602622",
+      "company": "Milton Hershey School",
+      "offerId": "5428709980",
       "userId": 1,
-      "location": "Oolitic, Lawrence County",
-      "title": "Regional Class A Drivers",
+      "location": "Boulder, Boulder County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
       "id": 3
     },
     {
-      "company": "St. David's North Austin Medical Center",
-      "offerId": "5395908543",
+      "company": "Encompass Health Rehabilitation Hospital of Bakersfield",
+      "offerId": "5608420464",
       "userId": 1,
-      "location": "Balcones, Travis County",
-      "title": "Registered Respiratory Therapist RRT",
+      "location": "Shafter, Kern County",
+      "title": "Speech Language Pathologist (SLP) - Benefits Start Day One",
       "id": 4
     },
     {
-      "company": "Milton Hershey School",
-      "offerId": "5428713505",
+      "company": "Instacart Shoppers",
+      "offerId": "5591154089",
       "userId": 1,
-      "location": "Benton, Saline County",
-      "title": "Houseparents - Relocation to Hershey, PA Required",
+      "location": "Primos, Delaware County",
+      "title": "Shop and Deliver - No Experience Required",
       "id": 5
     },
     {
-      "company": "HCA Healthcare Colleton Hospital",
-      "offerId": "5608450672",
+      "company": "The Rehabilitation Institute of Ohio, a Joint Venture between Premier Health and Encompass Health",
+      "offerId": "5521347279",
       "userId": 1,
-      "location": "Bluffton, Beaufort County",
-      "title": "Registered Nurse Med Surg",
+      "location": "Dayton, Montgomery County",
+      "title": "Registered Nurse",
       "id": 6
     },
     {
-      "company": "Milton Hershey School",
-      "offerId": "5428700163",
+      "company": "Geisinger",
+      "offerId": "5617277712",
       "userId": 1,
-      "location": "Wheeler, Wheeler County",
-      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
+      "location": "Wilkes Barre, Luzerne County",
+      "title": "RN- Registered Nurse- Advanced Acute Care Orthopedic Telemetry Unit",
       "id": 7
     },
     {
-      "company": "Instacart Shoppers",
-      "offerId": "5621504753",
+      "company": "Milton Hershey School",
+      "offerId": "5428708110",
       "userId": 1,
-      "location": "Black Lick Township, Indiana County",
-      "title": "Instacart Shopper - Delivery Driver",
+      "location": "Hamilton, Hancock County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
       "id": 8
     },
     {
-      "company": "Milton Hershey School",
-      "offerId": "5428713459",
+      "company": "The Retail Odyssey Company",
+      "offerId": "5630757956",
       "userId": 1,
-      "location": "Prospect Heights, Cook County",
-      "title": "Houseparents - Relocation to Hershey, PA Required",
+      "location": "Fishers, Hamilton County",
+      "title": "Retail Merchandiser",
       "id": 9
     },
     {
-      "company": "Premier Transportation",
-      "offerId": "5626905134",
+      "company": "Milton Hershey School",
+      "offerId": "5428715197",
       "userId": 1,
-      "location": "Cheraw, Chesterfield County",
-      "title": "Southeast Regional ",
+      "location": "Anderson, Anderson County",
+      "title": "Houseparents, Full-Time - Relocation to Hershey, PA Required",
       "id": 10
     },
     {
-      "company": "Mission Hospital",
-      "offerId": "5509017801",
+      "company": "Encompass Health Rehabilitation Institute of Libertyville",
+      "offerId": "5608432180",
       "userId": 1,
-      "location": "Brevard, Transylvania County",
-      "title": "Licensed Practical Nurse Emergency Department PRN",
+      "location": "Rolling Meadows, Cook County",
+      "title": "Physical Therapist",
       "id": 11
     },
     {
-      "company": "HCA Florida North Florida Hospital",
-      "offerId": "5608081476",
+      "company": "Encompass Health Rehabilitation Hospital of Concordville",
+      "offerId": "5610873045",
       "userId": 1,
-      "location": "Gainesville, Alachua County",
-      "title": "Registered Nurse- Medical Surgical-Nights",
+      "location": "Wyndmoor, Montgomery County",
+      "title": "Physical Therapist Assistant",
       "id": 12
     },
     {
-      "company": "Methodist Hospital Westover Hills",
-      "offerId": "5490285173",
+      "company": "Central Intelligence Agency",
       "userId": 1,
-      "location": "Universal City, Bexar County",
-      "title": "CT Tech",
+      "location": "Washington, District of Columbia",
+      "title": "Cyber Threat Analyst",
       "id": 13
     },
     {
-      "company": "Instacart Shoppers",
-      "offerId": "5631684004",
+      "company": "Milton Hershey School",
+      "offerId": "5428713306",
       "userId": 1,
-      "location": "Silver Creek, Schuylkill County",
-      "title": "Shop and Deliver - No Experience Required",
+      "location": "Coon Rapids, Anoka County",
+      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
       "id": 14
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713126",
+      "userId": 1,
+      "location": "Marathon, Monroe County",
+      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
+      "id": 15
+    },
+    {
+      "company": "HCA Florida Poinciana Hospital",
+      "offerId": "5488076929",
+      "userId": 1,
+      "location": "Orlando, Orange County",
+      "title": "Radiology Technologist",
+      "id": 16
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5503182599",
+      "userId": 1,
+      "location": "Asheville, Buncombe County",
+      "title": "Registered Nurse (RN) - Hiring Now!",
+      "id": 17
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713244",
+      "userId": 1,
+      "location": "Centreville, Saint Clair County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 18
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428716481",
+      "userId": 1,
+      "location": "Bellflower, Los Angeles County",
+      "title": "Houseparents, Full-Time - Relocation to Hershey, PA Required",
+      "id": 19
+    },
+    {
+      "company": "Securitas Electronic Security",
+      "offerId": "5638478480",
+      "userId": 1,
+      "location": "Sandhill, Rankin County",
+      "title": "Project Manager Global Clients",
+      "id": 20
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428701126",
+      "userId": 1,
+      "location": "Spur, Dickens County",
+      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
+      "id": 21
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5479554130",
+      "userId": 1,
+      "location": "Morganton, Burke County",
+      "title": "Clinical Nurse Coordinator - Neuro",
+      "id": 22
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5474351637",
+      "userId": 1,
+      "location": "Asheville, Buncombe County",
+      "title": "Registered Nurse (RN) - Hiring Now!",
+      "id": 23
     }
   ],
   "applications": [

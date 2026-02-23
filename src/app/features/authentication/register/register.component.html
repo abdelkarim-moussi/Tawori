@@ -1,15 +1,26 @@
 <div
-  class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-indigo-50/30 to-violet-50/40 px-4">
+  class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-indigo-50/30 to-violet-50/40 px-4"
+>
   <div class="w-full max-w-sm">
     <!-- Card -->
     <div
-      class="bg-white/80 backdrop-blur-md rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-6 border border-white/60">
+      class="bg-white/80 backdrop-blur-md rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] p-6 border border-white/60"
+    >
       <!-- Header -->
       <div class="text-center mb-5">
         <div
-          class="w-11 h-11 mx-auto mb-3 rounded-xl bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center shadow-[0_4px_16px_rgba(99,102,241,0.35)]">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          class="w-11 h-11 mx-auto mb-3 rounded-xl bg-indigo-500 flex items-center justify-center shadow-[0_4px_16px_rgba(99,102,241,0.35)]"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 text-white"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
             <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
             <circle cx="8.5" cy="7" r="4" />
             <line x1="20" y1="8" x2="20" y2="14" />
@@ -25,95 +36,169 @@
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="grid grid-cols-2 gap-3 mb-4">
           <div>
-            <label for="first-name" class="block text-sm font-semibold text-slate-700 mb-1.5">First Name</label>
-            <input type="text" id="first-name" formControlName="firstName" placeholder="John"
+            <label
+              for="first-name"
+              class="block text-sm font-semibold text-slate-700 mb-1.5"
+              >First Name</label
+            >
+            <input
+              type="text"
+              id="first-name"
+              formControlName="firstName"
+              placeholder="John"
               class="w-full px-4 py-2.5 rounded-md border border-slate-200 bg-slate-50/50 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all duration-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 focus:bg-white"
               [ngClass]="{
                 'border-red-400 focus:border-red-400 focus:ring-red-100':
                   registerForm.get('firstName')?.invalid &&
                   registerForm.get('firstName')?.touched,
-              }" />
-            <p *ngIf="
+              }"
+            />
+            <p
+              *ngIf="
                 registerForm.get('firstName')?.invalid &&
                 registerForm.get('firstName')?.touched
-              " class="text-red-500 text-xs mt-1">
+              "
+              class="text-red-500 text-xs mt-1"
+            >
               First name is required
             </p>
           </div>
           <div>
-            <label for="last-name" class="block text-sm font-semibold text-slate-700 mb-1.5">Last Name</label>
-            <input type="text" id="last-name" formControlName="lastName" placeholder="Doe"
+            <label
+              for="last-name"
+              class="block text-sm font-semibold text-slate-700 mb-1.5"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              id="last-name"
+              formControlName="lastName"
+              placeholder="Doe"
               class="w-full px-4 py-2.5 rounded-md border border-slate-200 bg-slate-50/50 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all duration-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 focus:bg-white"
               [ngClass]="{
                 'border-red-400 focus:border-red-400 focus:ring-red-100':
                   registerForm.get('lastName')?.invalid &&
                   registerForm.get('lastName')?.touched,
-              }" />
-            <p *ngIf="
+              }"
+            />
+            <p
+              *ngIf="
                 registerForm.get('lastName')?.invalid &&
                 registerForm.get('lastName')?.touched
-              " class="text-red-500 text-xs mt-1">
+              "
+              class="text-red-500 text-xs mt-1"
+            >
               Last name is required
             </p>
           </div>
         </div>
 
         <div class="mb-4">
-          <label for="email" class="block text-sm font-semibold text-slate-700 mb-1.5">Email</label>
-          <input type="email" id="email" formControlName="email" placeholder="john.doe@example.com"
+          <label
+            for="email"
+            class="block text-sm font-semibold text-slate-700 mb-1.5"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="john.doe@example.com"
             class="w-full px-4 py-2.5 rounded-md border border-slate-200 bg-slate-50/50 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all duration-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 focus:bg-white"
             [ngClass]="{
               'border-red-400 focus:border-red-400 focus:ring-red-100':
                 registerForm.get('email')?.invalid &&
                 registerForm.get('email')?.touched,
-            }" />
-          <p *ngIf="
+            }"
+          />
+          <p
+            *ngIf="
               registerForm.get('email')?.hasError('required') &&
               registerForm.get('email')?.touched
-            " class="text-red-500 text-xs mt-1">
+            "
+            class="text-red-500 text-xs mt-1"
+          >
             Email is required
           </p>
-          <p *ngIf="
+          <p
+            *ngIf="
               registerForm.get('email')?.hasError('email') &&
               registerForm.get('email')?.touched
-            " class="text-red-500 text-xs mt-1">
+            "
+            class="text-red-500 text-xs mt-1"
+          >
             Please enter a valid email
           </p>
         </div>
 
         <div class="mb-5">
-          <label for="password" class="block text-sm font-semibold text-slate-700 mb-1.5">Password</label>
-          <input type="password" id="password" formControlName="password" placeholder="At least 8 characters"
+          <label
+            for="password"
+            class="block text-sm font-semibold text-slate-700 mb-1.5"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            placeholder="At least 8 characters"
             class="w-full px-4 py-2.5 rounded-md border border-slate-200 bg-slate-50/50 text-sm text-slate-800 placeholder-slate-400 outline-none transition-all duration-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 focus:bg-white"
             [ngClass]="{
               'border-red-400 focus:border-red-400 focus:ring-red-100':
                 registerForm.get('password')?.invalid &&
                 registerForm.get('password')?.touched,
-            }" />
-          <p *ngIf="
+            }"
+          />
+          <p
+            *ngIf="
               registerForm.get('password')?.hasError('required') &&
               registerForm.get('password')?.touched
-            " class="text-red-500 text-xs mt-1">
+            "
+            class="text-red-500 text-xs mt-1"
+          >
             Password is required
           </p>
-          <p *ngIf="
+          <p
+            *ngIf="
               registerForm.get('password')?.hasError('minlength') &&
               registerForm.get('password')?.touched
-            " class="text-red-500 text-xs mt-1">
+            "
+            class="text-red-500 text-xs mt-1"
+          >
             Password must be at least 8 characters
           </p>
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" [disabled]="isSubmitting"
-          class="w-full py-3 px-4 rounded-md text-sm font-bold tracking-wide text-white bg-gradient-to-r from-indigo-500 to-violet-500 shadow-[0_4px_16px_rgba(99,102,241,0.35)] transition-all duration-300 hover:shadow-[0_8px_28px_rgba(99,102,241,0.45)] hover:-translate-y-px active:scale-[0.98] active:translate-y-0 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-[0_4px_16px_rgba(99,102,241,0.35)] cursor-pointer">
+        <button
+          type="submit"
+          [disabled]="isSubmitting"
+          class="w-full py-3 px-4 rounded-md text-sm font-bold tracking-wide text-white bg-indigo-500 shadow-[0_4px_16px_rgba(99,102,241,0.35)] transition-all duration-300 hover:shadow-[0_8px_28px_rgba(99,102,241,0.45)] hover:-translate-y-px active:scale-[0.98] active:translate-y-0 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-[0_4px_16px_rgba(99,102,241,0.35)] cursor-pointer"
+        >
           <span *ngIf="!isSubmitting">Create Account</span>
-          <span *ngIf="isSubmitting" class="flex items-center justify-center gap-2">
-            <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-              </path>
+          <span
+            *ngIf="isSubmitting"
+            class="flex items-center justify-center gap-2"
+          >
+            <svg
+              class="animate-spin h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
             </svg>
             Creating...
           </span>
@@ -123,8 +208,11 @@
       <!-- Login Link -->
       <p class="text-center text-sm text-slate-500 mt-6">
         Already have an account?
-        <a routerLink="/login"
-          class="text-indigo-500 font-semibold hover:text-indigo-600 transition-colors no-underline">Sign in</a>
+        <a
+          routerLink="/login"
+          class="text-indigo-500 font-semibold hover:text-indigo-600 transition-colors no-underline"
+          >Sign in</a
+        >
       </p>
     </div>
   </div>

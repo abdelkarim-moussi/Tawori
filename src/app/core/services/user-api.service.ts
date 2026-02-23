@@ -31,4 +31,16 @@ export class UserApiService {
   deleteUser(userId: number): Observable<any> {
     return this.http.delete<any>(`${environment.jsonServerUrl}/users/${userId}`);
   }
+
+  isAuthenticated(): boolean{
+    const user = JSON.parse(localStorage.getItem('user') || 'null');
+    if(!user){
+      return false
+    }
+    return true
+  }
+
+  authUser(): any{
+    return JSON.parse(localStorage.getItem('user') || 'null');
+  }
 }

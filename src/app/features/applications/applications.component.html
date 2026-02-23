@@ -1,60 +1,131 @@
 <div class="container mx-auto p-6 bg-gray-50 min-h-screen">
   <!-- Search & Filter Header -->
-  <app-search-filters-header [isLoading]="isLoading" [showCountryFilter]="false" (search)="onSearch($event)">
+  <app-search-filters-header
+    [isLoading]="isLoading"
+    [showCountryFilter]="false"
+    (search)="onSearch($event)"
+  >
   </app-search-filters-header>
 
-  <div *ngIf="isLoading" class="flex flex-col items-center justify-center py-20">
-    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+  <div
+    *ngIf="isLoading"
+    class="flex flex-col items-center justify-center py-20"
+  >
+    <div
+      class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"
+    ></div>
     <p class="mt-4 text-gray-600 font-medium">Loading Application...</p>
   </div>
 
-  <div *ngIf="errorMessage" class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+  <div
+    *ngIf="errorMessage"
+    class="bg-red-50 border-l-4 border-red-500 p-4 mb-6"
+  >
     <p class="text-red-700">{{ errorMessage }}</p>
   </div>
 
   <div *ngIf="!isLoading && applications.length > 0">
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">
-      <app-application-card *ngFor="
+      <app-application-card
+        *ngFor="
           let application of filtredApplications
             | paginate: { itemsPerPage: resultsPerPage, currentPage: page }
-        " [application]="application" (applicationDeleted)="onApplicationDeleted($event)">
+        "
+        [application]="application"
+        (applicationDeleted)="onApplicationDeleted($event)"
+      >
       </app-application-card>
     </div>
 
     <div class="flex justify-center items-center space-x-4 mt-12 pb-10">
-      <button (click)="goToPreviousPage()" [disabled]="page === 1"
-        class="px-6 py-2 bg-white border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all">
+      <button
+        (click)="goToPreviousPage()"
+        [disabled]="page === 1"
+        class="px-6 py-2 bg-white border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+      >
         previous
       </button>
 
       <span class="text-gray-600 font-semibold">page {{ page }}</span>
 
-      <button (click)="goToNextPage()" [disabled]="page === totalPages"
-        class="px-6 py-2 bg-indigo-500 text-white rounded-lg shadow-sm text-sm font-medium hover:bg-indigo-600 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
+      <button
+        (click)="goToNextPage()"
+        [disabled]="page >= totalPages"
+        class="px-6 py-2 bg-indigo-500 text-white rounded-lg shadow-sm text-sm font-medium hover:bg-indigo-600 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
         next
       </button>
     </div>
   </div>
 
-  <div *ngIf="!isLoading && applications.length === 0 && !errorMessage"
-    class="flex flex-col items-center justify-center py-20">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-28 h-28 mb-6" viewBox="0 0 120 120" fill="none">
+  <div
+    *ngIf="!isLoading && applications.length === 0 && !errorMessage"
+    class="flex flex-col items-center justify-center py-20"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-28 h-28 mb-6"
+      viewBox="0 0 120 120"
+      fill="none"
+    >
       <!-- Soft background circle -->
       <circle cx="60" cy="60" r="56" fill="url(#emptyGrad)" opacity="0.08" />
       <!-- Clipboard body -->
-      <rect x="32" y="28" width="56" height="72" rx="8" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="2" />
+      <rect
+        x="32"
+        y="28"
+        width="56"
+        height="72"
+        rx="8"
+        fill="#e0e7ff"
+        stroke="#a5b4fc"
+        stroke-width="2"
+      />
       <!-- Clipboard clip -->
-      <rect x="46" y="22" width="28" height="12" rx="4" fill="#c7d2fe" stroke="#818cf8" stroke-width="1.5" />
+      <rect
+        x="46"
+        y="22"
+        width="28"
+        height="12"
+        rx="4"
+        fill="#c7d2fe"
+        stroke="#818cf8"
+        stroke-width="1.5"
+      />
       <!-- Empty lines -->
       <rect x="42" y="48" width="36" height="4" rx="2" fill="#c7d2fe" />
       <rect x="42" y="58" width="28" height="4" rx="2" fill="#ddd6fe" />
       <rect x="42" y="68" width="32" height="4" rx="2" fill="#e0e7ff" />
       <!-- Magnifying glass -->
-      <circle cx="82" cy="84" r="12" fill="white" stroke="#818cf8" stroke-width="2" />
-      <line x1="91" y1="93" x2="100" y2="102" stroke="#818cf8" stroke-width="3" stroke-linecap="round" />
+      <circle
+        cx="82"
+        cy="84"
+        r="12"
+        fill="white"
+        stroke="#818cf8"
+        stroke-width="2"
+      />
+      <line
+        x1="91"
+        y1="93"
+        x2="100"
+        y2="102"
+        stroke="#818cf8"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
       <!-- Question mark in magnifying glass -->
-      <text x="82" y="89" text-anchor="middle" fill="#a5b4fc" font-size="14" font-weight="600"
-        font-family="Inter, sans-serif">?</text>
+      <text
+        x="82"
+        y="89"
+        text-anchor="middle"
+        fill="#a5b4fc"
+        font-size="14"
+        font-weight="600"
+        font-family="Inter, sans-serif"
+      >
+        ?
+      </text>
       <defs>
         <linearGradient id="emptyGrad" x1="0" y1="0" x2="120" y2="120">
           <stop offset="0%" stop-color="#6366f1" />
@@ -63,6 +134,8 @@
       </defs>
     </svg>
     <p class="text-slate-700 text-xl font-semibold mb-1">No Applications Yet</p>
-    <p class="text-slate-400 text-sm">Your submitted applications will appear here.</p>
+    <p class="text-slate-400 text-sm">
+      Your submitted applications will appear here.
+    </p>
   </div>
 </div>

@@ -9,6 +9,7 @@ import { Store } from '@ngrx/store';
 import * as FavoritesActions from "../../../store/favorites/favorite.actions";
 import { selectFavoriteByOfferId } from '../../../store/favorites/favorite.selector';
 import { Subscription } from 'rxjs';
+import { UserApiService } from '../../../core/services/user-api.service';
 
 @Component({
   selector: 'app-offer-card',
@@ -29,9 +30,11 @@ export class OfferCardComponent implements OnInit, OnDestroy {
 
   private favoriteSub!: Subscription;
 
-  constructor(private applicationService: ApplicationApiService,
+  constructor(
+    private applicationService: ApplicationApiService,
     private router: Router,
-    private store: Store) { }
+    private store: Store,
+    private userService: UserApiService) { }
 
   ngOnInit(): void {
     this.store.dispatch(FavoritesActions.loadFavorites());
@@ -50,7 +53,7 @@ export class OfferCardComponent implements OnInit, OnDestroy {
 
   trackApplication() {
     this.application = {
-      userId: 1,
+      userId: this.userService.authUser().id,
       offerId: Number(this.offer.id),
       apiSource: this.offer.apiSource,
       title: this.offer.title,
