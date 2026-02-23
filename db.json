@@ -31,22 +31,6 @@
   ],
   "favorites": [
     {
-      "company": "Del Sol Medical Center",
-      "offerId": "5610407486",
-      "userId": 1,
-      "location": "Socorro, El Paso County",
-      "title": "CT Technologist",
-      "id": 2
-    },
-    {
-      "company": "Milton Hershey School",
-      "offerId": "5428709980",
-      "userId": 1,
-      "location": "Boulder, Boulder County",
-      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
-      "id": 3
-    },
-    {
       "company": "Encompass Health Rehabilitation Hospital of Bakersfield",
       "offerId": "5608420464",
       "userId": 1,
@@ -204,6 +188,334 @@
       "location": "Asheville, Buncombe County",
       "title": "Registered Nurse (RN) - Hiring Now!",
       "id": 23
+    },
+    {
+      "company": "BURNCO Colorado LLC",
+      "offerId": "5641744840",
+      "userId": 1,
+      "location": "Milliken, Weld County",
+      "title": "Mixer Driver",
+      "id": 24
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5474351145",
+      "userId": 1,
+      "location": "Asheville, Buncombe County",
+      "title": "Registered Nurse Medical Cardiology Stepdown",
+      "id": 25
+    },
+    {
+      "company": "Kansas Rehabilitation Hospital, a joint venture of Encompass Health and Stormont Vail Health",
+      "offerId": "5608435198",
+      "userId": 1,
+      "location": "Alta Vista, Wabaunsee County",
+      "title": "Registered Nurse",
+      "id": 26
+    },
+    {
+      "company": "LewisGale Medical Center",
+      "offerId": "5601578023",
+      "userId": 1,
+      "location": "Fort Lewis, Salem",
+      "title": "CT Technologist",
+      "id": 27
+    },
+    {
+      "company": "BURNCO Colorado LLC",
+      "offerId": "5641744840",
+      "userId": 1,
+      "location": "Milliken, Weld County",
+      "title": "Mixer Driver",
+      "id": 28
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5474351145",
+      "userId": 1,
+      "location": "Asheville, Buncombe County",
+      "title": "Registered Nurse Medical Cardiology Stepdown",
+      "id": 29
+    },
+    {
+      "company": "BURNCO Colorado LLC",
+      "offerId": "5641744840",
+      "userId": 1,
+      "location": "Milliken, Weld County",
+      "title": "Mixer Driver",
+      "id": 30
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5474351145",
+      "userId": 1,
+      "location": "Asheville, Buncombe County",
+      "title": "Registered Nurse Medical Cardiology Stepdown",
+      "id": 31
+    },
+    {
+      "company": "Kansas Rehabilitation Hospital, a joint venture of Encompass Health and Stormont Vail Health",
+      "offerId": "5608435198",
+      "userId": 1,
+      "location": "Alta Vista, Wabaunsee County",
+      "title": "Registered Nurse",
+      "id": 32
+    },
+    {
+      "company": "LewisGale Medical Center",
+      "offerId": "5601578023",
+      "userId": 1,
+      "location": "Fort Lewis, Salem",
+      "title": "CT Technologist",
+      "id": 33
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 34
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 35
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 37
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 38
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 39
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 40
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 41
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 42
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 43
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 44
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 45
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 46
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 47
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 48
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 49
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 50
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 51
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 52
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5563831195",
+      "userId": 1,
+      "location": "King of Prussia, Montgomery County",
+      "title": "Weekend Houseparents, Part-Time - Relocation to Hershey, PA Required",
+      "id": 53
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 54
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5563831195",
+      "userId": 1,
+      "location": "King of Prussia, Montgomery County",
+      "title": "Weekend Houseparents, Part-Time - Relocation to Hershey, PA Required",
+      "id": 55
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 56
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428707074",
+      "userId": 1,
+      "location": "Monarch Bay, Orange County",
+      "title": "Houseparents - Relocation to Hershey, PA Required",
+      "id": 57
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5563831195",
+      "userId": 1,
+      "location": "King of Prussia, Montgomery County",
+      "title": "Weekend Houseparents, Part-Time - Relocation to Hershey, PA Required",
+      "id": 58
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 59
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 60
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5563831195",
+      "userId": 1,
+      "location": "King of Prussia, Montgomery County",
+      "title": "Weekend Houseparents, Part-Time - Relocation to Hershey, PA Required",
+      "id": 61
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5563831195",
+      "userId": 1,
+      "location": "King of Prussia, Montgomery County",
+      "title": "Weekend Houseparents, Part-Time - Relocation to Hershey, PA Required",
+      "id": 62
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 63
+    },
+    {
+      "company": "Instacart Shoppers",
+      "offerId": "5634068641",
+      "userId": "4",
+      "location": "Narragansett, Washington County",
+      "title": "Instacart Delivery Driver - Flexible Hours",
+      "id": 64
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428711167",
+      "userId": "4",
+      "location": "San Bruno, San Mateo County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 65
     }
   ],
   "applications": [
@@ -401,6 +713,58 @@
       "notes": "",
       "dateAdded": "2026-02-20T17:04:27.974Z",
       "id": 17
+    },
+    {
+      "userId": "4",
+      "offerId": 5641744840,
+      "apiSource": "Adzuna",
+      "title": "Mixer Driver",
+      "company": "BURNCO Colorado LLC",
+      "location": "Milliken, Weld County",
+      "url": "https://www.adzuna.com/land/ad/5641744840?se=5k9CIV4Q8RGN54km_8BaUQ&utm_medium=api&utm_source=8f6cdae2&v=379111548F759018D56C09DFE62FA6190D5A8A4D",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-23T02:19:51.164Z",
+      "id": 18
+    },
+    {
+      "userId": "4",
+      "offerId": 5474351145,
+      "apiSource": "Adzuna",
+      "title": "Registered Nurse Medical Cardiology Stepdown",
+      "company": "Mission Hospital",
+      "location": "Asheville, Buncombe County",
+      "url": "https://www.adzuna.com/land/ad/5474351145?se=4qUpJF4Q8RG2fqdz0Oa1IA&utm_medium=api&utm_source=8f6cdae2&v=CE80FC4E4A6E488E7A697AC2B8DDF3A6FE77F7D0",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-23T02:19:56.052Z",
+      "id": 19
+    },
+    {
+      "userId": "4",
+      "offerId": 5428714377,
+      "apiSource": "Adzuna",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "company": "Milton Hershey School",
+      "location": "Helper, Carbon County",
+      "url": "https://www.adzuna.com/land/ad/5428714377?se=WmZLRWAQ8RG2fqdz0Oa1IA&utm_medium=api&utm_source=8f6cdae2&v=0E386F3D34F1C171F6A6343E5ED3272A8F940EA8",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-23T02:35:43.388Z",
+      "id": 20
+    },
+    {
+      "userId": "4",
+      "offerId": 5428713199,
+      "apiSource": "Adzuna",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "company": "Milton Hershey School",
+      "location": "Eldorado, Saline County",
+      "url": "https://www.adzuna.com/land/ad/5428713199?se=VO9ROGEQ8RGCOqer9fzSag&utm_medium=api&utm_source=8f6cdae2&v=86437C6F020B9A78EFB7B9A2788DE0B604210072",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-23T02:43:02.540Z",
+      "id": 21
     }
   ]
 }

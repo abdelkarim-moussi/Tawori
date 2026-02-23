@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ApplicationApiService } from '../../../core/services/application-api.service';
 import { ToastrService } from 'ngx-toastr';
+import { UserApiService } from '../../../core/services/user-api.service';
 @Component({
   selector: 'app-application-card',
   imports: [CommonModule,RouterLink],
@@ -15,8 +16,10 @@ export class ApplicationCardComponent {
 
   @Output() applicationDeleted = new EventEmitter<number>();
 
-  constructor(private applicationService: ApplicationApiService,
-    private toastrService : ToastrService
+  constructor(
+    private applicationService: ApplicationApiService,
+    private toastrService : ToastrService,
+  
   ){}
 
 

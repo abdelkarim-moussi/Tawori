@@ -6,7 +6,7 @@ import { Application } from '../../../core/types/application';
 import { Router } from '@angular/router';
 import { Favorite } from '../../../core/types/favorite';
 import { Store } from '@ngrx/store';
-import * as FavoritesActions from "../../../store/favorites/favorite.actions";
+import * as FavoritesActions from '../../../store/favorites/favorite.actions';
 import { selectFavoriteByOfferId } from '../../../store/favorites/favorite.selector';
 import { Subscription } from 'rxjs';
 import { UserApiService } from '../../../core/services/user-api.service';
@@ -15,7 +15,7 @@ import { UserApiService } from '../../../core/services/user-api.service';
   selector: 'app-offer-card',
   imports: [DatePipe, CommonModule],
   templateUrl: './offer-card.component.html',
-  styleUrl: './offer-card.component.css'
+  styleUrl: './offer-card.component.css',
 })
 export class OfferCardComponent implements OnInit, OnDestroy {
   @Input() offer!: Offer;
@@ -34,17 +34,18 @@ export class OfferCardComponent implements OnInit, OnDestroy {
     private applicationService: ApplicationApiService,
     private router: Router,
     private store: Store,
-    private userService: UserApiService) { }
+    private userService: UserApiService,
+  ) {}
 
   ngOnInit(): void {
     this.store.dispatch(FavoritesActions.loadFavorites());
 
-    this.favoriteSub = this.store.select(selectFavoriteByOfferId(this.offer.id)).subscribe(
-      favorite => {
+    this.favoriteSub = this.store
+      .select(selectFavoriteByOfferId(this.offer.id))
+      .subscribe((favorite) => {
         this.existInFavorite = !!favorite;
         this.favorite = favorite;
-      }
-    );
+      });
   }
 
   ngOnDestroy(): void {
@@ -62,50 +63,59 @@ export class OfferCardComponent implements OnInit, OnDestroy {
       url: this.offer.url,
       status: 'Pending',
       notes: '',
-      dateAdded: new Date().toISOString()
+      dateAdded: new Date().toISOString(),
     };
 
-    this.applicationService.checkIfAlreadyApplied(this.application.userId, this.application.offerId).subscribe({
-      next: (applied) => {
-        this.alreadyApplied = applied;
-        if (!this.alreadyApplied) {
-          this.processApplication(this.application);
-        }
-      }
-    });
+    this.applicationService
+      .checkIfAlreadyApplied(this.application.userId, this.application.offerId)
+      .subscribe({
+        next: (applied) => {
+          this.alreadyApplied = applied;
+          if (!this.alreadyApplied) {
+            this.processApplication(this.application);
+          }
+        },
+      });
   }
 
   processApplication(application: Application) {
     this.applicationService.createApplication(application).subscribe({
       next: (data: Application) => {
         application = data;
-        this.messageType = "success";
-        this.message = "Application Succefull";
-        this.router.navigate(["applicationDetails", application.id])
+        this.messageType = 'success';
+        this.message = 'Application Succefull';
+        this.router.navigate(['applicationDetails', application.id]);
       },
       error: (error) => {
-        console.error("There is an Error Will Trying To Save The Application : ", error);
-        this.messageType = "error";
-        this.message = "Application Failed"
-      }
+        console.error(
+          'There is an Error Will Trying To Save The Application : ',
+          error,
+        );
+        this.messageType = 'error';
+        this.message = 'Application Failed';
+      },
     });
   }
 
   addToFavorites() {
     if (this.existInFavorite && this.favorite?.id) {
-      this.store.dispatch(FavoritesActions.removeFromFavorites({
-        favoriteId: this.favorite.id,
-        offerId: this.offer.id
-      }));
+      this.store.dispatch(
+        FavoritesActions.removeFromFavorites({
+          favoriteId: this.favorite.id,
+          offerId: this.offer.id,
+        }),
+      );
     } else {
       const newFavorite: Favorite = {
         company: this.offer.company,
         offerId: this.offer.id,
-        userId: 1,
+        userId: this.userService.authUser().id,
         location: this.offer.location,
-        title: this.offer.title
+        title: this.offer.title,
       };
-      this.store.dispatch(FavoritesActions.addToFavorites({ favorite: newFavorite }));
+      this.store.dispatch(
+        FavoritesActions.addToFavorites({ favorite: newFavorite }),
+      );
     }
   }
 }

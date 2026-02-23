@@ -5,33 +5,44 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FavoriteApiService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http : HttpClient) { }
-
-   getFavorites():Observable<Favorite[]>{
-    return this.http.get<Favorite[]>(`${environment.jsonServerUrl}/favorites`);
+  getMyFavorites(): Observable<Favorite[]> {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    return this.http.get<Favorite[]>(`${environment.jsonServerUrl}/favorites`, {
+      params: {
+        userId: user.id,
+      },
+    });
   }
 
-  getFavoriteById(favoriteId:number):Observable<Favorite>{
-    return this.http.get<Favorite>(`${environment.jsonServerUrl}/favorites/${favoriteId}`);
+  getFavoriteById(favoriteId: number): Observable<Favorite> {
+    return this.http.get<Favorite>(
+      `${environment.jsonServerUrl}/favorites/${favoriteId}`,
+    );
   }
 
-  addTofavorite(newFavorite:Favorite):Observable<Favorite>{
-    return this.http.post<Favorite>(`${environment.jsonServerUrl}/favorites`,newFavorite);
+  addTofavorite(newFavorite: Favorite): Observable<Favorite> {
+    return this.http.post<Favorite>(
+      `${environment.jsonServerUrl}/favorites`,
+      newFavorite,
+    );
   }
 
-  removeFromFavorite(favoriteId: number):Observable<any>{
-    return this.http.delete<any>(`${environment.jsonServerUrl}/favorites/${favoriteId}`);
+  removeFromFavorite(favoriteId: number): Observable<any> {
+    return this.http.delete<any>(
+      `${environment.jsonServerUrl}/favorites/${favoriteId}`,
+    );
   }
 
-  getfavoriteByOfferId(offerId: number){
-    return this.http.get<Favorite>(`${environment.jsonServerUrl}/favorites`,{
-      params:{
-        offerId: offerId
-      }
-    })
+  getfavoriteByOfferId(offerId: number) {
+    return this.http.get<Favorite>(`${environment.jsonServerUrl}/favorites`, {
+      params: {
+        offerId: offerId,
+      },
+    });
   }
 }
