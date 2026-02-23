@@ -1,0 +1,31 @@
+@keyframes glow-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+}
+
+.card-cta:hover::before {
+  opacity: 1;
+}
+
+.card-cta:hover svg {
+  transform: translateX(4px);
+}

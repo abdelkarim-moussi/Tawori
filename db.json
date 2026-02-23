@@ -1,0 +1,770 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "abdelkarim",
+      "lastName": "moussi",
+      "email": "moussi@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": 2,
+      "firstName": "abdelkarim",
+      "lastName": "moussi",
+      "email": "moussi@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": 3,
+      "firstName": "abdelkarim",
+      "lastName": "moussi",
+      "email": "moussi@tawori.com",
+      "password": "12345678"
+    },
+    {
+      "id": 4,
+      "firstName": "ahmed",
+      "lastName": "ali",
+      "email": "ali@tawori.com",
+      "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+    }
+  ],
+  "favorites": [
+    {
+      "company": "Encompass Health Rehabilitation Hospital of Bakersfield",
+      "offerId": "5608420464",
+      "userId": 1,
+      "location": "Shafter, Kern County",
+      "title": "Speech Language Pathologist (SLP) - Benefits Start Day One",
+      "id": 4
+    },
+    {
+      "company": "Instacart Shoppers",
+      "offerId": "5591154089",
+      "userId": 1,
+      "location": "Primos, Delaware County",
+      "title": "Shop and Deliver - No Experience Required",
+      "id": 5
+    },
+    {
+      "company": "The Rehabilitation Institute of Ohio, a Joint Venture between Premier Health and Encompass Health",
+      "offerId": "5521347279",
+      "userId": 1,
+      "location": "Dayton, Montgomery County",
+      "title": "Registered Nurse",
+      "id": 6
+    },
+    {
+      "company": "Geisinger",
+      "offerId": "5617277712",
+      "userId": 1,
+      "location": "Wilkes Barre, Luzerne County",
+      "title": "RN- Registered Nurse- Advanced Acute Care Orthopedic Telemetry Unit",
+      "id": 7
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428708110",
+      "userId": 1,
+      "location": "Hamilton, Hancock County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 8
+    },
+    {
+      "company": "The Retail Odyssey Company",
+      "offerId": "5630757956",
+      "userId": 1,
+      "location": "Fishers, Hamilton County",
+      "title": "Retail Merchandiser",
+      "id": 9
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428715197",
+      "userId": 1,
+      "location": "Anderson, Anderson County",
+      "title": "Houseparents, Full-Time - Relocation to Hershey, PA Required",
+      "id": 10
+    },
+    {
+      "company": "Encompass Health Rehabilitation Institute of Libertyville",
+      "offerId": "5608432180",
+      "userId": 1,
+      "location": "Rolling Meadows, Cook County",
+      "title": "Physical Therapist",
+      "id": 11
+    },
+    {
+      "company": "Encompass Health Rehabilitation Hospital of Concordville",
+      "offerId": "5610873045",
+      "userId": 1,
+      "location": "Wyndmoor, Montgomery County",
+      "title": "Physical Therapist Assistant",
+      "id": 12
+    },
+    {
+      "company": "Central Intelligence Agency",
+      "userId": 1,
+      "location": "Washington, District of Columbia",
+      "title": "Cyber Threat Analyst",
+      "id": 13
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713306",
+      "userId": 1,
+      "location": "Coon Rapids, Anoka County",
+      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
+      "id": 14
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713126",
+      "userId": 1,
+      "location": "Marathon, Monroe County",
+      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
+      "id": 15
+    },
+    {
+      "company": "HCA Florida Poinciana Hospital",
+      "offerId": "5488076929",
+      "userId": 1,
+      "location": "Orlando, Orange County",
+      "title": "Radiology Technologist",
+      "id": 16
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5503182599",
+      "userId": 1,
+      "location": "Asheville, Buncombe County",
+      "title": "Registered Nurse (RN) - Hiring Now!",
+      "id": 17
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713244",
+      "userId": 1,
+      "location": "Centreville, Saint Clair County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 18
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428716481",
+      "userId": 1,
+      "location": "Bellflower, Los Angeles County",
+      "title": "Houseparents, Full-Time - Relocation to Hershey, PA Required",
+      "id": 19
+    },
+    {
+      "company": "Securitas Electronic Security",
+      "offerId": "5638478480",
+      "userId": 1,
+      "location": "Sandhill, Rankin County",
+      "title": "Project Manager Global Clients",
+      "id": 20
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428701126",
+      "userId": 1,
+      "location": "Spur, Dickens County",
+      "title": "Youth Development Specialist - Relocation to Hershey, PA Required",
+      "id": 21
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5479554130",
+      "userId": 1,
+      "location": "Morganton, Burke County",
+      "title": "Clinical Nurse Coordinator - Neuro",
+      "id": 22
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5474351637",
+      "userId": 1,
+      "location": "Asheville, Buncombe County",
+      "title": "Registered Nurse (RN) - Hiring Now!",
+      "id": 23
+    },
+    {
+      "company": "BURNCO Colorado LLC",
+      "offerId": "5641744840",
+      "userId": 1,
+      "location": "Milliken, Weld County",
+      "title": "Mixer Driver",
+      "id": 24
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5474351145",
+      "userId": 1,
+      "location": "Asheville, Buncombe County",
+      "title": "Registered Nurse Medical Cardiology Stepdown",
+      "id": 25
+    },
+    {
+      "company": "Kansas Rehabilitation Hospital, a joint venture of Encompass Health and Stormont Vail Health",
+      "offerId": "5608435198",
+      "userId": 1,
+      "location": "Alta Vista, Wabaunsee County",
+      "title": "Registered Nurse",
+      "id": 26
+    },
+    {
+      "company": "LewisGale Medical Center",
+      "offerId": "5601578023",
+      "userId": 1,
+      "location": "Fort Lewis, Salem",
+      "title": "CT Technologist",
+      "id": 27
+    },
+    {
+      "company": "BURNCO Colorado LLC",
+      "offerId": "5641744840",
+      "userId": 1,
+      "location": "Milliken, Weld County",
+      "title": "Mixer Driver",
+      "id": 28
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5474351145",
+      "userId": 1,
+      "location": "Asheville, Buncombe County",
+      "title": "Registered Nurse Medical Cardiology Stepdown",
+      "id": 29
+    },
+    {
+      "company": "BURNCO Colorado LLC",
+      "offerId": "5641744840",
+      "userId": 1,
+      "location": "Milliken, Weld County",
+      "title": "Mixer Driver",
+      "id": 30
+    },
+    {
+      "company": "Mission Hospital",
+      "offerId": "5474351145",
+      "userId": 1,
+      "location": "Asheville, Buncombe County",
+      "title": "Registered Nurse Medical Cardiology Stepdown",
+      "id": 31
+    },
+    {
+      "company": "Kansas Rehabilitation Hospital, a joint venture of Encompass Health and Stormont Vail Health",
+      "offerId": "5608435198",
+      "userId": 1,
+      "location": "Alta Vista, Wabaunsee County",
+      "title": "Registered Nurse",
+      "id": 32
+    },
+    {
+      "company": "LewisGale Medical Center",
+      "offerId": "5601578023",
+      "userId": 1,
+      "location": "Fort Lewis, Salem",
+      "title": "CT Technologist",
+      "id": 33
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 34
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 35
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 37
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 38
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 39
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 40
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 41
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 42
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 43
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 44
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 45
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 46
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 47
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 48
+    },
+    {
+      "company": "Mclane Company, Inc.",
+      "offerId": "5629383822",
+      "userId": 1,
+      "location": "Guilford, Dearborn County",
+      "title": "CDL A Delivery Truck Driver",
+      "id": 49
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428714377",
+      "userId": 1,
+      "location": "Helper, Carbon County",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "id": 50
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 51
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 52
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5563831195",
+      "userId": 1,
+      "location": "King of Prussia, Montgomery County",
+      "title": "Weekend Houseparents, Part-Time - Relocation to Hershey, PA Required",
+      "id": 53
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 54
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5563831195",
+      "userId": 1,
+      "location": "King of Prussia, Montgomery County",
+      "title": "Weekend Houseparents, Part-Time - Relocation to Hershey, PA Required",
+      "id": 55
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 56
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428707074",
+      "userId": 1,
+      "location": "Monarch Bay, Orange County",
+      "title": "Houseparents - Relocation to Hershey, PA Required",
+      "id": 57
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5563831195",
+      "userId": 1,
+      "location": "King of Prussia, Montgomery County",
+      "title": "Weekend Houseparents, Part-Time - Relocation to Hershey, PA Required",
+      "id": 58
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 59
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 60
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5563831195",
+      "userId": 1,
+      "location": "King of Prussia, Montgomery County",
+      "title": "Weekend Houseparents, Part-Time - Relocation to Hershey, PA Required",
+      "id": 61
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5563831195",
+      "userId": 1,
+      "location": "King of Prussia, Montgomery County",
+      "title": "Weekend Houseparents, Part-Time - Relocation to Hershey, PA Required",
+      "id": 62
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428713199",
+      "userId": 1,
+      "location": "Eldorado, Saline County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 63
+    },
+    {
+      "company": "Instacart Shoppers",
+      "offerId": "5634068641",
+      "userId": "4",
+      "location": "Narragansett, Washington County",
+      "title": "Instacart Delivery Driver - Flexible Hours",
+      "id": 64
+    },
+    {
+      "company": "Milton Hershey School",
+      "offerId": "5428711167",
+      "userId": "4",
+      "location": "San Bruno, San Mateo County",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "id": 65
+    }
+  ],
+  "applications": [
+    {
+      "userId": 1,
+      "offerId": 5626905622,
+      "apiSource": "Adzuna",
+      "title": "Southeast Regional ",
+      "company": "Premier Transportation",
+      "location": "Leesburg, Lee County",
+      "url": "https://www.adzuna.com/land/ad/5626905622?se=6DgngssI8RGeadIymRECxg&utm_medium=api&utm_source=8f6cdae2&v=EB2EE3AD65A5F2B86626D3461075A46929DA3A27",
+      "status": "pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T12:02:41.146Z",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "offerId": 5621504753,
+      "apiSource": "Adzuna",
+      "title": "Instacart Shopper - Delivery Driver",
+      "company": "Instacart Shoppers",
+      "location": "Black Lick Township, Indiana County",
+      "url": "https://www.adzuna.com/land/ad/5621504753?se=Mo6KVOwI8RG37oGTxz0png&utm_medium=api&utm_source=8f6cdae2&v=4E43573943BF47A4E7F31C0D00D1EA66C75032BA",
+      "status": "applied",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:38.268Z",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "offerId": 5626905134,
+      "apiSource": "Adzuna",
+      "title": "Southeast Regional ",
+      "company": "Premier Transportation",
+      "location": "Cheraw, Chesterfield County",
+      "url": "https://www.adzuna.com/land/ad/5626905134?se=SERYVuwI8RGj8IcG06-IuQ&utm_medium=api&utm_source=8f6cdae2&v=EEA0577CA44529FB58AF6F9F17745BB09F3DF9B4",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:40.612Z",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "offerId": 5608604860,
+      "apiSource": "Adzuna",
+      "title": "Regional Class A Drivers: $1,000 Annual Longevity Bonus",
+      "company": "Premier Transportation",
+      "location": "Fargo, Clinch County",
+      "url": "https://www.adzuna.com/land/ad/5608604860?se=toW2V-wI8RGj8IcG06-IuQ&utm_medium=api&utm_source=8f6cdae2&v=3C6A20A79F0872F123B871E9B54327B91D068D36",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:43.356Z",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "offerId": 5441785377,
+      "apiSource": "Adzuna",
+      "title": "Occupational Therapist",
+      "company": "Encompass Health Deaconess Rehabilitation Hospital",
+      "location": "Haubstadt, Gibson County",
+      "url": "https://www.adzuna.com/land/ad/5441785377?se=zEXUWewI8RG_EqBvoLA8Gw&utm_medium=api&utm_source=8f6cdae2&v=BDFBB3B0D1C1D244C50A84A1B518670797C7E9B5",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:46.886Z",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "offerId": 5428713459,
+      "apiSource": "Adzuna",
+      "title": "Houseparents - Relocation to Hershey, PA Required",
+      "company": "Milton Hershey School",
+      "location": "Prospect Heights, Cook County",
+      "url": "https://www.adzuna.com/land/ad/5428713459?se=-NciXOwI8RG37oGTxz0png&utm_medium=api&utm_source=8f6cdae2&v=45D8730444A6A766ABC3E290D2CCA5B85A3931AC",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:50.716Z",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "offerId": 5608425334,
+      "apiSource": "Adzuna",
+      "title": "Dialysis RN",
+      "company": "Altru Rehabilitation Hospital",
+      "location": "Fertile, Polk County",
+      "url": "https://www.adzuna.com/land/ad/5608425334?se=uGCgXuwI8RGj8IcG06-IuQ&utm_medium=api&utm_source=8f6cdae2&v=38CFDEF53E1E6D9EF8CB7D2B0C90D2B5C5ECABD4",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:57:54.836Z",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "offerId": 5590321714,
+      "apiSource": "Adzuna",
+      "title": "Service Technician I",
+      "company": "Securitas Electronic Security",
+      "location": "Allegan, Allegan County",
+      "url": "https://www.adzuna.com/land/ad/5590321714?se=SuhZY-wI8RG37oGTxz0png&utm_medium=api&utm_source=8f6cdae2&v=888EAE0704261CED40BA8A7B5202EA63CCEF5D49",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:03.724Z",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Targeting Officer",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/756782600",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:06.502Z",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Staff Operations Officer",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/756775500",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:10.060Z",
+      "id": 12
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Paramilitary Operations Officer",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/756773100",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:17.573Z",
+      "id": 13
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Foreign Language Instructor",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/789407600",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:22.172Z",
+      "id": 14
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Clinical Psychologist",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/764671200",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:28.197Z",
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "offerId": null,
+      "apiSource": "UsaJobs",
+      "title": "Collection Management Officer",
+      "company": "Central Intelligence Agency",
+      "location": "Washington, District of Columbia",
+      "url": "https://www.usajobs.gov:443/job/756737500",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-13T15:58:31.372Z",
+      "id": 16
+    },
+    {
+      "userId": 1,
+      "offerId": 5608081476,
+      "apiSource": "Adzuna",
+      "title": "Registered Nurse- Medical Surgical-Nights",
+      "company": "HCA Florida North Florida Hospital",
+      "location": "Gainesville, Alachua County",
+      "url": "https://www.adzuna.com/land/ad/5608081476?se=_laF0XUO8RGDeqGWOsMo6Q&utm_medium=api&utm_source=8f6cdae2&v=5F65FB25A7554C3311C90211F0258A63CDA0C3EF",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-20T17:04:27.974Z",
+      "id": 17
+    },
+    {
+      "userId": "4",
+      "offerId": 5641744840,
+      "apiSource": "Adzuna",
+      "title": "Mixer Driver",
+      "company": "BURNCO Colorado LLC",
+      "location": "Milliken, Weld County",
+      "url": "https://www.adzuna.com/land/ad/5641744840?se=5k9CIV4Q8RGN54km_8BaUQ&utm_medium=api&utm_source=8f6cdae2&v=379111548F759018D56C09DFE62FA6190D5A8A4D",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-23T02:19:51.164Z",
+      "id": 18
+    },
+    {
+      "userId": "4",
+      "offerId": 5474351145,
+      "apiSource": "Adzuna",
+      "title": "Registered Nurse Medical Cardiology Stepdown",
+      "company": "Mission Hospital",
+      "location": "Asheville, Buncombe County",
+      "url": "https://www.adzuna.com/land/ad/5474351145?se=4qUpJF4Q8RG2fqdz0Oa1IA&utm_medium=api&utm_source=8f6cdae2&v=CE80FC4E4A6E488E7A697AC2B8DDF3A6FE77F7D0",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-23T02:19:56.052Z",
+      "id": 19
+    },
+    {
+      "userId": "4",
+      "offerId": 5428714377,
+      "apiSource": "Adzuna",
+      "title": "House Parents - Relocation to Hershey, PA Required",
+      "company": "Milton Hershey School",
+      "location": "Helper, Carbon County",
+      "url": "https://www.adzuna.com/land/ad/5428714377?se=WmZLRWAQ8RG2fqdz0Oa1IA&utm_medium=api&utm_source=8f6cdae2&v=0E386F3D34F1C171F6A6343E5ED3272A8F940EA8",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-23T02:35:43.388Z",
+      "id": 20
+    },
+    {
+      "userId": "4",
+      "offerId": 5428713199,
+      "apiSource": "Adzuna",
+      "title": "Residential Youth Caregiver - Relocation to Hershey, PA Required",
+      "company": "Milton Hershey School",
+      "location": "Eldorado, Saline County",
+      "url": "https://www.adzuna.com/land/ad/5428713199?se=VO9ROGEQ8RGCOqer9fzSag&utm_medium=api&utm_source=8f6cdae2&v=86437C6F020B9A78EFB7B9A2788DE0B604210072",
+      "status": "Pending",
+      "notes": "",
+      "dateAdded": "2026-02-23T02:43:02.540Z",
+      "id": 21
+    }
+  ]
+}
