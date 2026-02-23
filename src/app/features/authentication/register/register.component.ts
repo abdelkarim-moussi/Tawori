@@ -58,7 +58,11 @@ export class RegisterComponent {
     };
 
     this.userService.addUser(user).subscribe({
-      next: () => {
+      next: (registeredUser) => {
+        localStorage.setItem('user', JSON.stringify({
+          'id': String(registeredUser.id),
+          'email': registeredUser.email
+        }));
         this.toastr.success('Account created successfully!');
         this.router.navigate(['/offers']);
       },
